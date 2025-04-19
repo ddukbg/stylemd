@@ -105,6 +105,10 @@ Here are the currently included themes:
 12. **`pixel-art`**: Retro RPG style with pixel font and UI window elements. [Live Preview](https://stylemd.pages.dev/example-output-pixel-art.html)
 13. **`y2k`**: Early 2000s web design aesthetic with Aqua elements. [Live Preview](https://stylemd.pages.dev/example-output-y2k.html)
 14. **`frutiger-aero`**: Mid-2000s style with glossy, glassy, and nature-inspired elements. [Live Preview](https://stylemd.pages.dev/example-output-frutiger-aero.html)
+15. **`area51`**: Dark, retro sci-fi/hacker theme with neon green text. [Live Preview](https://stylemd.pages.dev/example-output-area51.html)
+16. **`heartland`**: Warm, cozy theme inspired by 90s personal/hobby sites. [Live Preview](https://stylemd.pages.dev/example-output-heartland.html)
+17. **`hollywood`**: Flashy 90s entertainment/fan site theme with gold and purple. [Live Preview](https://stylemd.pages.dev/example-output-hollywood.html)
+18. **`atlantis`**: Mystical, dark fantasy theme inspired by sunken cities. [Live Preview](https://stylemd.pages.dev/example-output-atlantis.html)
 
 *(You can find the corresponding template files in the `/templates` directory and example markdown files in `/examples/input`.)*
 

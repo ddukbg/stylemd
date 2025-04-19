@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌊 {{title}} ✨</title> <!-- Added emojis -->
+    <style>
+        body.theme-atlantis {
+            background-color: #00001a; /* Very dark deep blue background */
+            color: #c0c0c0; /* Silver text */
+            font-family: 'Times New Roman', Times, serif; /* Classic fantasy/book feel */
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .theme-atlantis .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #000033; /* Slightly lighter deep blue */
+            padding: 25px 35px;
+            border: 1px solid #4d4dff; /* Medium blue border */
+            box-shadow: 0 0 20px rgba(77, 77, 255, 0.4); /* Blue glow */
+            border-radius: 0; /* Sharp corners */
+        }
+        .theme-atlantis h1, .theme-atlantis h2, .theme-atlantis h3, .theme-atlantis h4, .theme-atlantis h5, .theme-atlantis h6 {
+            color: #ccccff; /* Light Lavender/Blue for headings */
+            font-family: 'Papyrus', 'fantasy'; /* Fantasy-like font (fallback to generic fantasy) */
+            text-align: center;
+            border-bottom: 1px solid #4d4dff;
+            padding-bottom: 8px;
+            margin-top: 1.6em;
+            letter-spacing: 1px;
+        }
+        .theme-atlantis h1 {
+            font-size: 2.6em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #8080ff;
+            text-shadow: 1px 1px 3px #000000;
+        }
+        .theme-atlantis a {
+            color: #ffcc66; /* Gold/Yellow links */
+            text-decoration: none;
+        }
+        .theme-atlantis a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+            text-shadow: 0 0 5px #ffcc66;
+        }
+        .theme-atlantis code {
+            background-color: #1a1a4d; /* Darker blue for code */
+            color: #e0e0e0;
+            padding: 0.2em 0.4em;
+            border: 1px dashed #4d4dff;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .theme-atlantis pre {
+            background-color: #1a1a4d;
+            border: 1px solid #8080ff;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+        .theme-atlantis pre code {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            font-size: 0.9em;
+        }
+        .theme-atlantis blockquote {
+            border-left: 3px solid #ffcc66; /* Gold border */
+            margin: 1.5em 0 1.5em 20px;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 51, 0.5); /* Semi-transparent dark blue */
+            color: #e6e6ff; /* Light lavender text */
+            font-style: italic;
+        }
+        .theme-atlantis table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #8080ff;
+            margin: 1em 0;
+        }
+        .theme-atlantis th, .theme-atlantis td {
+            border: 1px solid #4d4dff;
+            padding: 10px;
+            text-align: left;
+        }
+        .theme-atlantis th {
+            background-color: #1a1a4d;
+            color: #ccccff;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        .theme-atlantis hr {
+            border: 0;
+            border-top: 1px dotted #8080ff;
+            margin: 2em 0;
+        }
+        .theme-atlantis img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ffcc66; /* Gold border for images */
+            padding: 3px;
+            background-color: #00001a;
+            display: block;
+            margin: 1em auto;
+        }
+        .theme-atlantis footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dotted #8080ff;
+            font-size: 0.85em;
+            text-align: center;
+            color: #a0a0a0;
+        }
+    </style>
+</head>
+<body class="theme-atlantis">
+    <div class="container">
+        {{{content}}}
+
+        <footer>
+            {{attributionText}} `{{themeName}}` theme with `stylemd`. Get the tool here: <a href="{{repoUrl}}">{{repoUrl}}</a>
+        </footer>
+    </div>
+</body>
+</html> 

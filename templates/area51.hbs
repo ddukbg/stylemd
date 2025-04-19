@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        body.theme-area51 {
+            background-color: #0a0a0a; /* Very dark background */
+            color: #00ff00; /* Neon green text */
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .theme-area51 .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #00ff00; /* Neon green border for the container */
+            padding: 15px 25px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); /* Subtle green glow */
+        }
+        .theme-area51 h1, .theme-area51 h2, .theme-area51 h3, .theme-area51 h4, .theme-area51 h5, .theme-area51 h6 {
+            color: #39FF14; /* Brighter neon green for headings */
+            border-bottom: 1px dashed #00ff00;
+            padding-bottom: 5px;
+        }
+        .theme-area51 a {
+            color: #00ffff; /* Neon cyan for links */
+            text-decoration: underline;
+        }
+        .theme-area51 a:hover {
+            color: #ffffff;
+            background-color: #00ff00;
+        }
+        .theme-area51 code {
+            background-color: #1a1a1a; /* Slightly lighter dark bg for code */
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: #00ff00; /* Ensure inline code also uses neon green */
+        }
+        .theme-area51 pre {
+            background-color: #1a1a1a;
+            border: 1px solid #00ff00;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+        .theme-area51 pre code {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            font-size: 0.9em;
+        }
+        .theme-area51 blockquote {
+            border-left: 3px solid #00ffff; /* Cyan border for blockquotes */
+            margin-left: 0;
+            padding-left: 15px;
+            color: #cccccc; /* Slightly dimmed color for quotes */
+            font-style: italic;
+        }
+        .theme-area51 table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #00ff00;
+            margin: 1em 0;
+        }
+        .theme-area51 th, .theme-area51 td {
+            border: 1px dashed #00ff00;
+            padding: 8px;
+            text-align: left;
+        }
+        .theme-area51 th {
+            background-color: #1a1a1a;
+            color: #39FF14;
+        }
+        .theme-area51 hr {
+            border: 0;
+            border-top: 1px dashed #00ff00;
+            margin: 1.5em 0;
+        }
+        .theme-area51 img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #00ff00; /* Optional green border for images */
+        }
+        .theme-area51 footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px dashed #00ff00;
+            font-size: 0.8em;
+            text-align: center;
+            color: #cccccc;
+        }
+    </style>
+</head>
+<body class="theme-area51">
+    <div class="container">
+        {{{content}}}
+
+        <footer>
+            {{attributionText}} `{{themeName}}` theme with `stylemd`. Get the tool here: <a href="{{repoUrl}}">{{repoUrl}}</a>
+        </footer>
+    </div>
+</body>
+</html> 

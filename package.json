@@ -1,6 +1,6 @@
 {
   "name": "@ddukbg/stylemd",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Convert Markdown files to styled static HTML pages using various retro and modern themes.",
   "main": "index.js",
   "bin": {
