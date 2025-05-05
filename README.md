@@ -7,12 +7,20 @@
 
 A command-line tool to generate static HTML pages from Markdown files, applying various style themes.
 
-<!-- Core Functionality Visual Placeholder -->
-<p align="center">
-    <img src="docs/images/example-retro-console.gif" alt="stylemd Demo GIF - Markdown to Styled HTML" width="700"/>
-    <img src="docs/images/example-geocities.gif" alt="stylemd Demo GIF - Markdown to Styled HTML" width="700"/>
-    <img src="docs/images/example-windows98.gif" alt="stylemd Demo GIF - Markdown to Styled HTML" width="700"/>
-</p>
+<!-- Core Functionality Showcase -->
+<div align="center">
+  <div style="margin-bottom: 20px;">
+    <h3>Single File Mode: Transform any Markdown into styled HTML</h3>
+    <p><code>Markdown</code> ➡️ <code>stylemd</code> ➡️ <code>Retro-Styled HTML</code></p>
+    <img src="docs/images/example-windows98.gif" alt="stylemd Demo - Single File Mode" width="700"/>
+  </div>
+  
+  <div style="margin-top: 30px;">
+    <h3>Blog Mode: Create complete themed static blogs</h3>
+    <p><code>Markdown Files</code> ➡️ <code>stylemd blog build</code> ➡️ <code>Complete Themed Blog</code></p>
+    <img src="docs/images/example-blog-mode.gif" alt="stylemd Demo - Blog Mode" width="700"/>
+  </div>
+</div>
 
 [![NPM Version](https://img.shields.io/npm/v/stylemd.svg)](https://www.npmjs.com/package/@ddukbg/stylemd) <!-- Placeholder: Replace with actual badge if published -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <!-- Assuming MIT License -->
