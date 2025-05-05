@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} - {{siteTitle}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #e8e8e8; /* Light gray background */
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%23d0d0d0" fill-opacity="0.4"%3E%3Cpath d="M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); /* Subtle pattern */
+      color: #333333;
+      font-family: 'Trebuchet MS', Verdana, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .y2k-container {
+      max-width: 850px;
+      margin: 25px auto;
+      background-color: rgba(255, 255, 255, 0.95); /* Slightly less opaque */
+      border: 1px solid #cccccc;
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Slightly stronger shadow */
+      overflow: hidden; /* Contain elements */
+    }
+    .y2k-header {
+      background: linear-gradient(to bottom, #7abcd4, #3c8dbc); /* Blue gradient */
+      color: #ffffff;
+      padding: 10px 15px;
+      font-size: 1.8em;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+      border-bottom: 1px solid #3c8dbc;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.1); /* Shadow for header */
+    }
+    .y2k-content {
+      padding: 15px 20px;
+    }
+    /* Markdown styling */
+    h1, h2, h3 {
+      color: #2a6496;
+      margin-top: 1.5em;
+      margin-bottom: 0.6em;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 4px;
+    }
+    h1 { font-size: 1.6em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.1em; }
+    p { margin: 1em 0; }
+    a {
+      color: #3c8dbc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      filter: brightness(1.1); /* Slightly brighten on hover */
+    }
+    ul, ol {
+      padding-left: 25px;
+      margin: 1em 0;
+    }
+    li { margin-bottom: 0.4em; }
+    code {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: #d63384; /* Pinkish */
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-family: Consolas, monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background-color: #f8f9fa;
+      border: 1px solid #ced4da;
+      padding: 12px;
+      margin: 1.5em 0;
+      overflow-x: auto;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      font-size: 0.9em;
+    }
+    pre code {
+      background-color: transparent;
+      padding: 0;
+      border: none;
+      color: inherit;
+    }
+    blockquote {
+      border-left: 4px solid #7abcd4;
+      padding: 10px 15px;
+      margin: 1.5em 0;
+      background-color: #f1f9ff;
+      color: #555555;
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.05); /* Subtle shadow for blockquote */
+    }
+    table {
+        border-collapse: collapse;
+        margin: 1.5em 0;
+        width: 100%;
+        border: 1px solid #cccccc;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        padding: 8px 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    .aqua-button {
+        display: inline-block;
+        padding: 8px 15px;
+        margin: 5px;
+        border: 1px solid #2a6496;
+        border-radius: 15px;
+        background: linear-gradient(to bottom, #bde7ff, #7abcd4);
+        color: #ffffff;
+        font-weight: bold;
+        text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.5);
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+    .aqua-button:hover {
+        background: linear-gradient(to bottom, #a8daff, #6aa7c4);
+    }
+    .aqua-button:active {
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+    }
+    .y2k-footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: 15px;
+        border-top: 1px solid #eeeeee;
+        font-size: 0.85em;
+        color: #777777;
+    }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="y2k-container">
+    <div class="y2k-header">My Web Portal v1.0</div>
+    <div class="y2k-content">
+      
+<header>
+  <h1>{{siteTitle}}</h1>
+  <p>{{siteDescription}}</p>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    {{#each navigationLinks}}
+      <a href="{{title}}.html">{{title}}</a>
+    {{/each}}
+  </nav>
+</header>
+<section class="post-list">
+  <ul>
+    {{#each posts}}
+    <li><a href="{{url}}">{{title}}</a> — {{date}} {{time}}</li>
+    {{/each}}
+  </ul>
+  {{#if pagination.enabled}}
+  <div class="pagination">
+    {{!-- Pagination controls can be added here --}}
+  </div>
+  {{/if}}
+</section>
+{{#if socialLinks}}
+<footer class="social-links">
+  {{#each socialLinks}}
+    <a href="{{url}}">{{platform}}</a>
+  {{/each}}
+  <p>{{footerText}}</p>
+</footer>
+{{else}}
+<footer>
+  <p>{{footerText}}</p>
+</footer>
+{{/if}}
+      <div style="text-align: center; margin-top: 20px;">
+          <a href="#" class="aqua-button">Click Me!</a>
+          <a href="#" class="aqua-button">Download Now</a>
+      </div>
+    </div>
+    <div class="y2k-footer">
+      Copyright &copy; 2001 MyCompany. All rights reserved.
+    </div>
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 

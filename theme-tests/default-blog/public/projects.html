@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - </title>
+  <style>
+    :root {
+        --primary-color: #333;
+        --secondary-color: #555;
+        --background-color: #f8f8f8;
+        --link-color: #007bff;
+        --code-background: #eee;
+        --border-color: #ddd;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.6;
+      color: var(--primary-color);
+      background-color: var(--background-color);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--primary-color);
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      line-height: 1.2;
+    }
+    h1 { font-size: 2em; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.25em; }
+    p { margin: 1em 0; }
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #0056b3; /* Darker blue on hover */
+    }
+    ul, ol {
+      margin: 1em 0;
+      padding-left: 2em;
+    }
+    li {
+      margin-bottom: 0.5em;
+    }
+    code {
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      background-color: var(--code-background);
+      padding: 0.2em 0.4em;
+      font-size: 0.9em;
+      border-radius: 3px;
+    }
+    pre {
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      background-color: var(--code-background);
+      padding: 1em;
+      margin: 1.5em 0;
+      overflow-x: auto;
+      border-radius: 3px;
+      border: 1px solid var(--border-color);
+    }
+    pre code {
+      background-color: transparent;
+      padding: 0;
+      border: none;
+    }
+    blockquote {
+      border-left: 4px solid var(--border-color);
+      padding: 0.5em 1em;
+      margin: 1.5em 0;
+      color: var(--secondary-color);
+      background-color: #fdfdfd;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 1.5em 0;
+      width: 100%;
+      border: 1px solid var(--border-color);
+    }
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.6em 0.8em;
+      text-align: left;
+    }
+    th {
+      background-color: var(--code-background);
+      font-weight: bold;
+    }
+    /* Simple responsive adjustments */
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+      body {
+        font-size: 14px;
+      }
+      h1 { font-size: 1.8em; }
+      h2 { font-size: 1.4em; }
+    }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body>
+  <div class="container">
+    <header>
+  <h1>Projects</h1>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+  </nav>
+  </header>
+    <h1 id="my-projects"><a href="#my-projects" class="header-anchor"></a>My Projects</h1><p>Here&#39;s a collection of projects I&#39;ve worked on recently. Each demonstrates different aspects of my skills and interests in web development and design.</p>
+<h2 id="stylemd-theme-creator"><a href="#stylemd-theme-creator" class="header-anchor"></a>StyleMD Theme Creator</h2><p>A tool for creating custom themes for StyleMD markdown-to-HTML converter.</p>
+<div class="mermaid">graph TD
+    A[Markdown Input] --> B[StyleMD Processor]
+    B --> C{Theme Selection}
+    C -->|Default| D[Standard HTML]
+    C -->|Custom| E[Themed HTML]
+    E --> F[CSS Styling]
+    D --> G[Final Output]
+    F --> G</div><p><strong>Technologies:</strong> JavaScript, Handlebars, CSS
+<strong>GitHub:</strong> <a href="#">View Project</a></p>
+<p><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Project Screenshot"></p>
+<h2 id="personal-portfolio-website"><a href="#personal-portfolio-website" class="header-anchor"></a>Personal Portfolio Website</h2><p>A responsive portfolio website showcasing my work and skills.</p>
+<p><strong>Technologies:</strong> HTML, CSS, JavaScript
+<strong>Live Demo:</strong> <a href="#">View Website</a></p>
+<h2 id="weather-dashboard-app"><a href="#weather-dashboard-app" class="header-anchor"></a>Weather Dashboard App</h2><p>A web application that provides real-time weather information for locations worldwide.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Current Conditions</td>
+<td>Real-time weather data</td>
+</tr>
+<tr>
+<td>5-Day Forecast</td>
+<td>Extended weather prediction</td>
+</tr>
+<tr>
+<td>Location Search</td>
+<td>Search for any city globally</td>
+</tr>
+<tr>
+<td>Weather Maps</td>
+<td>Interactive weather maps</td>
+</tr>
+</tbody></table>
+<p><strong>Technologies:</strong> React, OpenWeather API, Leaflet.js
+<strong>GitHub:</strong> <a href="#">View Project</a></p>
+<h2 id="e-commerce-platform"><a href="#e-commerce-platform" class="header-anchor"></a>E-commerce Platform</h2><p>A full-stack e-commerce solution with product management, shopping cart, and payment processing.</p>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Frontend
+    participant API
+    participant Database
+    participant PaymentGateway
+    
+    User->>Frontend: Browse Products
+    Frontend->>API: Request Products
+    API->>Database: Query Products
+    Database->>API: Return Products
+    API->>Frontend: Display Products
+    User->>Frontend: Add to Cart
+    User->>Frontend: Checkout
+    Frontend->>PaymentGateway: Process Payment
+    PaymentGateway->>Frontend: Payment Confirmation
+    Frontend->>API: Create Order
+    API->>Database: Store Order</div><p><strong>Technologies:</strong> Node.js, Express, MongoDB, Stripe, React
+<strong>GitHub:</strong> <a href="#">View Project</a></p>
+
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Trends 2025 - </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Architects+Daughter&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blueprint-bg: #00416a; /* Traditional Blueprint Blue */
+      --blueprint-line: #ffffff;
+      --blueprint-text: #e0f2f7; /* Light cyan text */
+      --blueprint-accent: #a7ffeb; /* Teal accent */
+      --blueprint-grid: rgba(255, 255, 255, 0.1);
+      --blueprint-container-bg: rgba(0, 65, 106, 0.8);
+    }
+    body {
+      background-color: var(--blueprint-bg);
+      background-image: linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px);
+      background-size: 20px 20px; /* Grid size */
+      color: var(--blueprint-text);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+      padding: 30px;
+    }
+    .blueprint-container {
+      background-color: var(--blueprint-container-bg);
+      border: 1px solid var(--blueprint-line);
+      padding: 20px 30px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    .title-block {
+        border: 1px solid var(--blueprint-line);
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 10px;
+        background-color: var(--blueprint-bg);
+        text-align: right;
+        color: var(--blueprint-line); /* White text in title block */
+    }
+    .title-block div { margin-bottom: 2px; }
+    .handwritten {
+        font-family: 'Architects Daughter', cursive;
+        color: var(--blueprint-text); /* Light cyan annotations */
+        font-size: 0.9em;
+    }
+    /* Markdown content styling */
+    h1, h2, h3 {
+      color: var(--blueprint-line); /* White headings */
+      border-bottom: 1px solid var(--blueprint-line);
+      padding-bottom: 5px;
+      margin-top: 1.5em;
+      margin-bottom: 0.8em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+    h3 { font-size: 1.1em; }
+    p { margin: 0.8em 0; }
+    ul, ol {
+      padding-left: 30px;
+      margin: 0.8em 0;
+    }
+    li {
+      margin-bottom: 0.3em;
+    }
+    code {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--blueprint-accent);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+    }
+    pre {
+      background-color: rgba(0, 0, 0, 0.2);
+      border: 1px dashed var(--blueprint-line);
+      padding: 15px;
+      margin: 1.5em 0;
+      overflow-x: auto;
+      font-size: 0.9em;
+      position: relative;
+      color: var(--blueprint-text);
+    }
+    pre::before { /* Schematic symbol decoration */
+        content: '// DETAIL VIEW'; /* Changed text */
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-family: 'Architects Daughter', cursive;
+        color: var(--blueprint-line);
+        font-size: 0.8em;
+        background-color: var(--blueprint-bg);
+        padding: 0 5px;
+    }
+    pre code {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      color: inherit; /* Inherit text color */
+    }
+    blockquote {
+      border-left: 4px solid var(--blueprint-accent);
+      padding: 10px 15px;
+      margin: 1.5em 0;
+      background-color: var(--blueprint-container-bg);
+      color: var(--blueprint-text);
+      font-style: italic;
+      position: relative;
+    }
+    blockquote::before { /* Annotation symbol */
+        content: '> NOTE:';
+        display: block;
+        font-family: 'Architects Daughter', cursive;
+        font-style: normal;
+        font-size: 0.9em;
+        color: var(--blueprint-line);
+        margin-bottom: 5px;
+    }
+    a {
+      color: var(--blueprint-accent);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--blueprint-accent);
+    }
+    a:hover {
+      color: var(--blueprint-line);
+      border-bottom-style: solid;
+    }
+    hr {
+        border: none;
+        border-top: 1px dashed var(--blueprint-line); /* White dashed line */
+        margin: 2em 0;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 1.5em 0;
+      width: 100%;
+      border: 1px solid var(--blueprint-line);
+      font-size: 0.9em;
+    }
+    th, td {
+      border: 1px dashed var(--blueprint-line); /* Dashed internal lines */
+      padding: 0.5em 0.7em;
+      text-align: left;
+    }
+    th {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--blueprint-line);
+      font-weight: 700;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--blueprint-line);
+    }
+    td {
+        color: var(--blueprint-text);
+    }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body>
+  <div class="blueprint-container">
+    <header>
+    <h1>Web Development Trends 2025</h1>
+    <p><small>2025-05-01 9:00 AM</small></p>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+    </nav>
+  </header>
+    <h1 id="web-development-trends-2025"><a href="#web-development-trends-2025" class="header-anchor"></a>Web Development Trends 2025</h1><p>Several technologies and methodologies are gaining attention in the web development field in 2025. This post explores the current web development trends.</p>
+<h2 id="1-growth-of-webassembly"><a href="#1-growth-of-webassembly" class="header-anchor"></a>1. Growth of WebAssembly</h2><p>WebAssembly (WASM) continues to grow, with many companies and developers now using it to build high-performance web applications.</p>
+<pre><code class="hljs rust"><span class="hljs-comment">// Rust example for WebAssembly</span>
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">fibonacci</span>(n: <span class="hljs-type">i32</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">i32</span> {
+    <span class="hljs-keyword">match</span> n {
+        <span class="hljs-number">0</span> =&gt; <span class="hljs-number">0</span>,
+        <span class="hljs-number">1</span> =&gt; <span class="hljs-number">1</span>,
+        _ =&gt; <span class="hljs-title function_ invoke__">fibonacci</span>(n - <span class="hljs-number">1</span>) + <span class="hljs-title function_ invoke__">fibonacci</span>(n - <span class="hljs-number">2</span>),
+    }
+}</code></pre><h2 id="2-ai-powered-development-tools"><a href="#2-ai-powered-development-tools" class="header-anchor"></a>2. AI-Powered Development Tools</h2><p>AI tools that help with code generation and refactoring have become commonplace. Tools like GitHub Copilot are now standard parts of development environments.</p>
+<blockquote>
+<p>Research shows that using AI code assistants can improve development speed by approximately 55%.</p>
+</blockquote>
+<div class="mermaid">flowchart LR
+    A[Developer Prompt] --> B[AI Assistant]
+    B --> C{Suggestion Quality}
+    C -->|High| D[Accept Code]
+    C -->|Low| E[Request New Suggestion]
+    D --> F[Integrate into Project]
+    E --> B</div><h2 id="3-serverless-architecture"><a href="#3-serverless-architecture" class="header-anchor"></a>3. Serverless Architecture</h2><p>Serverless computing continues to gain popularity, allowing developers to focus on business logic rather than infrastructure management.</p>
+<h3 id="major-serverless-providers-"><a href="#major-serverless-providers-" class="header-anchor"></a>Major Serverless Providers:</h3><ul>
+<li>AWS Lambda</li>
+<li>Azure Functions</li>
+<li>Google Cloud Functions</li>
+<li>Cloudflare Workers</li>
+</ul>
+<div class="mermaid">graph TD
+    A[Request] --> B[API Gateway]
+    B --> C[Serverless Function]
+    C --> D[Database]
+    C --> E[Other Services]
+    C --> F[Response]</div><h2 id="4-micro-frontends"><a href="#4-micro-frontends" class="header-anchor"></a>4. Micro Frontends</h2><p>Micro frontend architecture is an approach to breaking up large frontend applications into smaller, independent parts.</p>
+<p><img src="https://blog.scottlogic.com/ceberhardt/assets/microfrontends/microfrontends.png" alt="Micro Frontend Architecture"></p>
+<h2 id="5-developer-experience-dx-focused-design"><a href="#5-developer-experience-dx-focused-design" class="header-anchor"></a>5. Developer Experience (DX) Focused Design</h2><p>As interest in developer experience (DX) increases, development workflows and tool usability have greatly improved.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Key Features</th>
+<th>Languages Used</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vite</td>
+<td>Fast build, HMR</td>
+<td>JavaScript, TypeScript</td>
+</tr>
+<tr>
+<td>Next.js</td>
+<td>Server-side rendering, static site generation</td>
+<td>React</td>
+</tr>
+<tr>
+<td>SvelteKit</td>
+<td>File-based routing, server rendering</td>
+<td>Svelte</td>
+</tr>
+</tbody></table>
+<h2 id="6-edge-computing"><a href="#6-edge-computing" class="header-anchor"></a>6. Edge Computing</h2><p>Edge computing brings computation and data storage closer to the sources of data, improving response times and saving bandwidth.</p>
+<div class="mermaid">graph LR
+    A[User] --> B[Edge Network]
+    B --> C[Edge Location 1]
+    B --> D[Edge Location 2]
+    B --> E[Edge Location 3]
+    C --> F[Origin Server]
+    D --> F
+    E --> F</div><h2 id="7-web-components-amp-custom-elements"><a href="#7-web-components-amp-custom-elements" class="header-anchor"></a>7. Web Components &amp; Custom Elements</h2><p>Web Components continue to gain adoption as developers seek more interoperable and reusable UI elements.</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">HelloWorld</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">HTMLElement</span> {
+  <span class="hljs-title function_">connectedCallback</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">`&lt;h1&gt;Hello, World!&lt;/h1&gt;`</span>;
+  }
+}
+customElements.<span class="hljs-title function_">define</span>(<span class="hljs-string">&#x27;hello-world&#x27;</span>, <span class="hljs-title class_">HelloWorld</span>);</code></pre><h2 id="8-performance-metrics-amp-core-web-vitals"><a href="#8-performance-metrics-amp-core-web-vitals" class="header-anchor"></a>8. Performance Metrics &amp; Core Web Vitals</h2><p>Google&#39;s Core Web Vitals have become essential metrics for web developers to optimize for.</p>
+<p><img src="https://sematext.com/wp-content/uploads/2023/01/core-web-vitals-5.jpg" alt="Core Web Vitals"></p>
+<h2 id="conclusion"><a href="#conclusion" class="header-anchor"></a>Conclusion</h2><p>Web development continues to evolve, and keeping up with these trends is essential for modern web developers. Continuous learning and experimentation are important to become familiar with the latest technologies.</p>
+
+
+    <div class="title-block">
+      <div><span class="handwritten">PROJECT:</span> STYLEMD</div>
+      <div><span class="handwritten">SHEET:</span> 01</div>
+      <div><span class="handwritten">DATE:</span> 2025-05-05</div>
+      <div><span class="handwritten">REV:</span> B</div> <!-- Revision up -->
+    </div>
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 

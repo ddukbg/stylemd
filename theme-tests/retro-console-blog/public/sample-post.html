@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Sample Post - </title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0a1a0a; /* Dark Green */
+      color: #30ff30; /* Bright Green */
+      font-family: 'VT323', monospace;
+      font-size: 18px;
+      line-height: 1.3;
+      margin: 0;
+      padding: 15px;
+      overflow: hidden; /* Hide body scrollbars */
+      position: relative;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    /* Scanline effect */
+    body::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%), /* Slightly less dark scanline */
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.015), rgba(0, 0, 255, 0.05)); /* Slightly less color bleed */
+        background-size: 100% 4px, 3px 100%;
+        z-index: 2;
+        pointer-events: none;
+        animation: flicker 0.15s infinite;
+    }
+    /* Screen flicker effect */
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.95; }
+      100% { opacity: 1; }
+    }
+    /* CRT curvature simulation */
+    .crt-screen {
+        height: 100vh;
+        overflow: auto; /* Scroll inside the screen */
+        box-sizing: border-box;
+        padding: 10px;
+        /* Optional: Add slight curvature/glow if desired */
+        /* border-radius: 50% / 3%; */
+        /* box-shadow: 0 0 20px rgba(48, 255, 48, 0.3) inset; */
+    }
+    .terminal-header {
+      text-align: center;
+      margin-bottom: 1em;
+      color: #90ff90; /* Lighter green */
+      text-transform: uppercase;
+    }
+    .terminal-prompt {
+      color: #90ff90;
+    }
+    .cursor {
+      background-color: #30ff30;
+      animation: blink 1s step-end infinite;
+      display: inline-block;
+      width: 10px;
+      height: 18px;
+      vertical-align: bottom;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    /* Markdown styling */
+    h1, h2, h3 {
+      color: #ffffff; /* White for emphasis */
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      font-weight: normal;
+      text-transform: uppercase;
+      border-bottom: 1px solid #208020; /* Darker green border */
+      padding-bottom: 2px;
+    }
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 1em; }
+    p { margin: 0.5em 0; }
+    ul, ol {
+        padding-left: 0;
+        margin: 0.5em 0;
+        list-style: none;
+    }
+    li::before {
+        content: "> "; /* Arrow bullet */
+        color: #90ff90;
+    }
+    code {
+      background-color: #103010; /* Darker background for code */
+      padding: 0.1em 0.3em;
+      border: 1px dashed #208020;
+    }
+    pre {
+      background-color: #050d05;
+      border: 1px solid #208020;
+      padding: 8px;
+      margin: 1em 0;
+      overflow-x: auto;
+    }
+    pre code {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+    blockquote {
+      border-left: 3px solid #30ff30;
+      padding-left: 10px;
+      margin: 1em 0;
+      font-style: italic;
+      color: #90ff90;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 1em 0;
+      border: 1px solid #208020;
+      width: auto;
+    }
+    th, td {
+      border: 1px solid #208020;
+      padding: 3px 6px;
+      text-align: left;
+    }
+    th {
+      background-color: #103010;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body>
+  <div class="crt-screen">
+    <div class="terminal-header">ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</div>
+    <span class="terminal-prompt">Welcome to ROBCO Industries!</span>
+    <br>
+    <span class="terminal-prompt">&gt; Loading holotape...</span>
+    <br><br>
+    <header>
+    <h1>Markdown Sample Post</h1>
+    <p><small>2025-05-05 9:00 AM</small></p>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+    </nav>
+  </header>
+    <h1 id="markdown-sample-post"><a href="#markdown-sample-post" class="header-anchor"></a>Markdown Sample Post</h1><p>This post demonstrates various Markdown elements and features supported by StyleMD.</p>
+<h2 id="1-text-formatting"><a href="#1-text-formatting" class="header-anchor"></a>1. Text Formatting</h2><p>Regular text with <strong>bold text</strong>, <em>italic text</em>, and <del>strikethrough</del>.</p>
+<blockquote>
+<p>This is a blockquote. It&#39;s used for emphasizing important content.</p>
+<p>It can also span multiple paragraphs.</p>
+</blockquote>
+<h2 id="2-lists"><a href="#2-lists" class="header-anchor"></a>2. Lists</h2><h3 id="unordered-list-"><a href="#unordered-list-" class="header-anchor"></a>Unordered List:</h3><ul>
+<li>Item 1</li>
+<li>Item 2<ul>
+<li>Nested item 2.1</li>
+<li>Nested item 2.2</li>
+</ul>
+</li>
+<li>Item 3</li>
+</ul>
+<h3 id="ordered-list-"><a href="#ordered-list-" class="header-anchor"></a>Ordered List:</h3><ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+<h2 id="3-code"><a href="#3-code" class="header-anchor"></a>3. Code</h2><p>Inline code: <code>console.log(&#39;Hello, World!&#39;)</code></p>
+<p>Code block:</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">greet</span>(<span class="hljs-string">&#x27;World&#x27;</span>));</code></pre><h2 id="4-links-and-images"><a href="#4-links-and-images" class="header-anchor"></a>4. Links and Images</h2><p><a href="https://github.com/ddukbg/stylemd">StyleMD GitHub Page</a></p>
+<p><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nature Image"></p>
+<h2 id="5-tables"><a href="#5-tables" class="header-anchor"></a>5. Tables</h2><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Profession</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>John Doe</td>
+<td>30</td>
+<td>Developer</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>25</td>
+<td>Designer</td>
+</tr>
+<tr>
+<td>Emily Johnson</td>
+<td>28</td>
+<td>Marketer</td>
+</tr>
+</tbody></table>
+<h2 id="6-horizontal-rule"><a href="#6-horizontal-rule" class="header-anchor"></a>6. Horizontal Rule</h2><p>Below is a horizontal rule:</p>
+<hr>
+<h2 id="7-task-lists"><a href="#7-task-lists" class="header-anchor"></a>7. Task Lists</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> Completed task</li>
+<li><input disabled="" type="checkbox"> Incomplete task</li>
+<li><input checked="" disabled="" type="checkbox"> Another completed task</li>
+</ul>
+<h2 id="8-footnotes"><a href="#8-footnotes" class="header-anchor"></a>8. Footnotes</h2><p>This has a footnote[^1].</p>
+<p>[^1]: This is the footnote content.</p>
+<h2 id="9-definition-list"><a href="#9-definition-list" class="header-anchor"></a>9. Definition List</h2><p>StyleMD
+: A tool that converts Markdown files to HTML with various styles</p>
+<p>Markdown
+: A lightweight markup language with plain-text formatting syntax</p>
+<h2 id="10-mermaid-diagrams"><a href="#10-mermaid-diagrams" class="header-anchor"></a>10. Mermaid Diagrams</h2><p>StyleMD also supports Mermaid diagrams:</p>
+<div class="mermaid">graph TD
+    A[Start] --> B{Is it Markdown?}
+    B -->|Yes| C[Process with StyleMD]
+    B -->|No| D[Use another tool]
+    C --> E[Generate HTML]
+    E --> F[Apply Theme]
+    F --> G[Final Output]
+    D --> G</div><p>Flowchart example:</p>
+<div class="mermaid">flowchart LR
+    A[Input] --> B(Process)
+    B --> C{Decision}
+    C -->|One| D[Output 1]
+    C -->|Two| E[Output 2]</div><p>Sequence diagram:</p>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant StyleMD
+    participant Browser
+    
+    User->>StyleMD: Edit Markdown
+    StyleMD->>StyleMD: Process Markdown
+    StyleMD->>Browser: Generate HTML
+    Browser->>User: Display Result</div><h2 id="11-mathematical-formulas"><a href="#11-mathematical-formulas" class="header-anchor"></a>11. Mathematical Formulas</h2><p>Some math expressions: $E = mc^2$</p>
+<p>$$
+\frac{d}{dx}(x^n) = nx^{n-1}
+$$</p>
+
+    <br><br>
+    <span class="terminal-prompt">&gt; <span class="cursor"></span></span>
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Sample Post - </title>
+    <style>
+        body.theme-heartland {
+            background-color: #f5f5dc; /* Beige background */
+            /* Optional: Add a subtle background pattern */
+            /* background-image: url('path/to/subtle-pattern.png'); */
+            color: #5d4037; /* Dark brown text */
+            font-family: 'Georgia', serif; /* A classic serif font */
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .theme-heartland .container {
+            max-width: 750px;
+            margin: 20px auto;
+            background-color: #ffffff; /* White content area */
+            padding: 30px 40px;
+            border: 1px solid #d2b48c; /* Tan border */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .theme-heartland h1, .theme-heartland h2, .theme-heartland h3, .theme-heartland h4, .theme-heartland h5, .theme-heartland h6 {
+            color: #8d6e63; /* Muted brown for headings */
+            font-family: 'Comic Sans MS', 'cursive', sans-serif; /* Intentional nostalgic/casual font for headings */
+            border-bottom: 2px dotted #bcaaa4; /* Dotted border */
+            padding-bottom: 8px;
+            margin-top: 1.5em;
+        }
+        .theme-heartland h1 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 1em;
+        }
+        .theme-heartland a {
+            color: #795548; /* Slightly darker brown for links */
+            text-decoration: none;
+            border-bottom: 1px dashed #a1887f;
+        }
+        .theme-heartland a:hover {
+            color: #ffffff;
+            background-color: #a1887f; /* Muted background on hover */
+            border-bottom: none;
+        }
+        .theme-heartland code {
+            background-color: #efebe9; /* Light beige for code */
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            color: #6d4c41;
+        }
+        .theme-heartland pre {
+            background-color: #efebe9;
+            border: 1px solid #d7ccc8;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+        .theme-heartland pre code {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            font-size: 0.9em;
+        }
+        .theme-heartland blockquote {
+            border-left: 4px solid #a1887f; /* Muted brown border */
+            margin: 1.5em 0;
+            padding: 10px 20px;
+            background-color: #f5f5f5; /* Light grey bg for quotes */
+            color: #616161;
+            font-style: italic;
+        }
+        .theme-heartland table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #c5b8a5;
+            margin: 1em 0;
+        }
+        .theme-heartland th, .theme-heartland td {
+            border: 1px solid #dcd0bb;
+            padding: 10px;
+            text-align: left;
+        }
+        .theme-heartland th {
+            background-color: #ece3d4; /* Light tan header */
+            color: #795548;
+            font-family: 'Georgia', serif;
+        }
+        .theme-heartland hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(188, 170, 164, 0), rgba(188, 170, 164, 0.75), rgba(188, 170, 164, 0));
+            margin: 2em 0;
+        }
+        .theme-heartland img {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #d2b48c; /* Tan border for images */
+            padding: 3px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: block;
+            margin: 1em auto;
+        }
+        .theme-heartland footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dotted #bcaaa4;
+            font-size: 0.85em;
+            text-align: center;
+            color: #8d6e63;
+        }
+    
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body class="theme-heartland">
+    <div class="container">
+        <header>
+    <h1>Markdown Sample Post</h1>
+    <p><small>2025-05-05 9:00 AM</small></p>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+    </nav>
+  </header>
+    <h1 id="markdown-sample-post"><a href="#markdown-sample-post" class="header-anchor"></a>Markdown Sample Post</h1><p>This post demonstrates various Markdown elements and features supported by StyleMD.</p>
+<h2 id="1-text-formatting"><a href="#1-text-formatting" class="header-anchor"></a>1. Text Formatting</h2><p>Regular text with <strong>bold text</strong>, <em>italic text</em>, and <del>strikethrough</del>.</p>
+<blockquote>
+<p>This is a blockquote. It&#39;s used for emphasizing important content.</p>
+<p>It can also span multiple paragraphs.</p>
+</blockquote>
+<h2 id="2-lists"><a href="#2-lists" class="header-anchor"></a>2. Lists</h2><h3 id="unordered-list-"><a href="#unordered-list-" class="header-anchor"></a>Unordered List:</h3><ul>
+<li>Item 1</li>
+<li>Item 2<ul>
+<li>Nested item 2.1</li>
+<li>Nested item 2.2</li>
+</ul>
+</li>
+<li>Item 3</li>
+</ul>
+<h3 id="ordered-list-"><a href="#ordered-list-" class="header-anchor"></a>Ordered List:</h3><ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+<h2 id="3-code"><a href="#3-code" class="header-anchor"></a>3. Code</h2><p>Inline code: <code>console.log(&#39;Hello, World!&#39;)</code></p>
+<p>Code block:</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">greet</span>(<span class="hljs-string">&#x27;World&#x27;</span>));</code></pre><h2 id="4-links-and-images"><a href="#4-links-and-images" class="header-anchor"></a>4. Links and Images</h2><p><a href="https://github.com/ddukbg/stylemd">StyleMD GitHub Page</a></p>
+<p><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nature Image"></p>
+<h2 id="5-tables"><a href="#5-tables" class="header-anchor"></a>5. Tables</h2><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Profession</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>John Doe</td>
+<td>30</td>
+<td>Developer</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>25</td>
+<td>Designer</td>
+</tr>
+<tr>
+<td>Emily Johnson</td>
+<td>28</td>
+<td>Marketer</td>
+</tr>
+</tbody></table>
+<h2 id="6-horizontal-rule"><a href="#6-horizontal-rule" class="header-anchor"></a>6. Horizontal Rule</h2><p>Below is a horizontal rule:</p>
+<hr>
+<h2 id="7-task-lists"><a href="#7-task-lists" class="header-anchor"></a>7. Task Lists</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> Completed task</li>
+<li><input disabled="" type="checkbox"> Incomplete task</li>
+<li><input checked="" disabled="" type="checkbox"> Another completed task</li>
+</ul>
+<h2 id="8-footnotes"><a href="#8-footnotes" class="header-anchor"></a>8. Footnotes</h2><p>This has a footnote[^1].</p>
+<p>[^1]: This is the footnote content.</p>
+<h2 id="9-definition-list"><a href="#9-definition-list" class="header-anchor"></a>9. Definition List</h2><p>StyleMD
+: A tool that converts Markdown files to HTML with various styles</p>
+<p>Markdown
+: A lightweight markup language with plain-text formatting syntax</p>
+<h2 id="10-mermaid-diagrams"><a href="#10-mermaid-diagrams" class="header-anchor"></a>10. Mermaid Diagrams</h2><p>StyleMD also supports Mermaid diagrams:</p>
+<div class="mermaid">graph TD
+    A[Start] --> B{Is it Markdown?}
+    B -->|Yes| C[Process with StyleMD]
+    B -->|No| D[Use another tool]
+    C --> E[Generate HTML]
+    E --> F[Apply Theme]
+    F --> G[Final Output]
+    D --> G</div><p>Flowchart example:</p>
+<div class="mermaid">flowchart LR
+    A[Input] --> B(Process)
+    B --> C{Decision}
+    C -->|One| D[Output 1]
+    C -->|Two| E[Output 2]</div><p>Sequence diagram:</p>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant StyleMD
+    participant Browser
+    
+    User->>StyleMD: Edit Markdown
+    StyleMD->>StyleMD: Process Markdown
+    StyleMD->>Browser: Generate HTML
+    Browser->>User: Display Result</div><h2 id="11-mathematical-formulas"><a href="#11-mathematical-formulas" class="header-anchor"></a>11. Mathematical Formulas</h2><p>Some math expressions: $E = mc^2$</p>
+<p>$$
+\frac{d}{dx}(x^n) = nx^{n-1}
+$$</p>
+
+
+        <footer>
+             `` theme with `stylemd`. Get the tool here: <a href=""></a>
+        </footer>
+    </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 

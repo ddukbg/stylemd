@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Architects+Daughter&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blueprint-bg: #00416a; /* Traditional Blueprint Blue */
+      --blueprint-line: #ffffff;
+      --blueprint-text: #e0f2f7; /* Light cyan text */
+      --blueprint-accent: #a7ffeb; /* Teal accent */
+      --blueprint-grid: rgba(255, 255, 255, 0.1);
+      --blueprint-container-bg: rgba(0, 65, 106, 0.8);
+    }
+    body {
+      background-color: var(--blueprint-bg);
+      background-image: linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px);
+      background-size: 20px 20px; /* Grid size */
+      color: var(--blueprint-text);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+      padding: 30px;
+    }
+    .blueprint-container {
+      background-color: var(--blueprint-container-bg);
+      border: 1px solid var(--blueprint-line);
+      padding: 20px 30px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    .title-block {
+        border: 1px solid var(--blueprint-line);
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 10px;
+        background-color: var(--blueprint-bg);
+        text-align: right;
+        color: var(--blueprint-line); /* White text in title block */
+    }
+    .title-block div { margin-bottom: 2px; }
+    .handwritten {
+        font-family: 'Architects Daughter', cursive;
+        color: var(--blueprint-text); /* Light cyan annotations */
+        font-size: 0.9em;
+    }
+    /* Markdown content styling */
+    h1, h2, h3 {
+      color: var(--blueprint-line); /* White headings */
+      border-bottom: 1px solid var(--blueprint-line);
+      padding-bottom: 5px;
+      margin-top: 1.5em;
+      margin-bottom: 0.8em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+    h3 { font-size: 1.1em; }
+    p { margin: 0.8em 0; }
+    ul, ol {
+      padding-left: 30px;
+      margin: 0.8em 0;
+    }
+    li {
+      margin-bottom: 0.3em;
+    }
+    code {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--blueprint-accent);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+    }
+    pre {
+      background-color: rgba(0, 0, 0, 0.2);
+      border: 1px dashed var(--blueprint-line);
+      padding: 15px;
+      margin: 1.5em 0;
+      overflow-x: auto;
+      font-size: 0.9em;
+      position: relative;
+      color: var(--blueprint-text);
+    }
+    pre::before { /* Schematic symbol decoration */
+        content: '// DETAIL VIEW'; /* Changed text */
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-family: 'Architects Daughter', cursive;
+        color: var(--blueprint-line);
+        font-size: 0.8em;
+        background-color: var(--blueprint-bg);
+        padding: 0 5px;
+    }
+    pre code {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      color: inherit; /* Inherit text color */
+    }
+    blockquote {
+      border-left: 4px solid var(--blueprint-accent);
+      padding: 10px 15px;
+      margin: 1.5em 0;
+      background-color: var(--blueprint-container-bg);
+      color: var(--blueprint-text);
+      font-style: italic;
+      position: relative;
+    }
+    blockquote::before { /* Annotation symbol */
+        content: '> NOTE:';
+        display: block;
+        font-family: 'Architects Daughter', cursive;
+        font-style: normal;
+        font-size: 0.9em;
+        color: var(--blueprint-line);
+        margin-bottom: 5px;
+    }
+    a {
+      color: var(--blueprint-accent);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--blueprint-accent);
+    }
+    a:hover {
+      color: var(--blueprint-line);
+      border-bottom-style: solid;
+    }
+    hr {
+        border: none;
+        border-top: 1px dashed var(--blueprint-line); /* White dashed line */
+        margin: 2em 0;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 1.5em 0;
+      width: 100%;
+      border: 1px solid var(--blueprint-line);
+      font-size: 0.9em;
+    }
+    th, td {
+      border: 1px dashed var(--blueprint-line); /* Dashed internal lines */
+      padding: 0.5em 0.7em;
+      text-align: left;
+    }
+    th {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--blueprint-line);
+      font-weight: 700;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--blueprint-line);
+    }
+    td {
+        color: var(--blueprint-text);
+    }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body>
+  <div class="blueprint-container">
+    <header>
+  <h1>Projects</h1>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+  </nav>
+  </header>
+    <h1 id="my-projects"><a href="#my-projects" class="header-anchor"></a>My Projects</h1><p>Here&#39;s a collection of projects I&#39;ve worked on recently. Each demonstrates different aspects of my skills and interests in web development and design.</p>
+<h2 id="stylemd-theme-creator"><a href="#stylemd-theme-creator" class="header-anchor"></a>StyleMD Theme Creator</h2><p>A tool for creating custom themes for StyleMD markdown-to-HTML converter.</p>
+<div class="mermaid">graph TD
+    A[Markdown Input] --> B[StyleMD Processor]
+    B --> C{Theme Selection}
+    C -->|Default| D[Standard HTML]
+    C -->|Custom| E[Themed HTML]
+    E --> F[CSS Styling]
+    D --> G[Final Output]
+    F --> G</div><p><strong>Technologies:</strong> JavaScript, Handlebars, CSS
+<strong>GitHub:</strong> <a href="#">View Project</a></p>
+<p><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Project Screenshot"></p>
+<h2 id="personal-portfolio-website"><a href="#personal-portfolio-website" class="header-anchor"></a>Personal Portfolio Website</h2><p>A responsive portfolio website showcasing my work and skills.</p>
+<p><strong>Technologies:</strong> HTML, CSS, JavaScript
+<strong>Live Demo:</strong> <a href="#">View Website</a></p>
+<h2 id="weather-dashboard-app"><a href="#weather-dashboard-app" class="header-anchor"></a>Weather Dashboard App</h2><p>A web application that provides real-time weather information for locations worldwide.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Current Conditions</td>
+<td>Real-time weather data</td>
+</tr>
+<tr>
+<td>5-Day Forecast</td>
+<td>Extended weather prediction</td>
+</tr>
+<tr>
+<td>Location Search</td>
+<td>Search for any city globally</td>
+</tr>
+<tr>
+<td>Weather Maps</td>
+<td>Interactive weather maps</td>
+</tr>
+</tbody></table>
+<p><strong>Technologies:</strong> React, OpenWeather API, Leaflet.js
+<strong>GitHub:</strong> <a href="#">View Project</a></p>
+<h2 id="e-commerce-platform"><a href="#e-commerce-platform" class="header-anchor"></a>E-commerce Platform</h2><p>A full-stack e-commerce solution with product management, shopping cart, and payment processing.</p>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant Frontend
+    participant API
+    participant Database
+    participant PaymentGateway
+    
+    User->>Frontend: Browse Products
+    Frontend->>API: Request Products
+    API->>Database: Query Products
+    Database->>API: Return Products
+    API->>Frontend: Display Products
+    User->>Frontend: Add to Cart
+    User->>Frontend: Checkout
+    Frontend->>PaymentGateway: Process Payment
+    PaymentGateway->>Frontend: Payment Confirmation
+    Frontend->>API: Create Order
+    API->>Database: Store Order</div><p><strong>Technologies:</strong> Node.js, Express, MongoDB, Stripe, React
+<strong>GitHub:</strong> <a href="#">View Project</a></p>
+
+
+    <div class="title-block">
+      <div><span class="handwritten">PROJECT:</span> STYLEMD</div>
+      <div><span class="handwritten">SHEET:</span> 01</div>
+      <div><span class="handwritten">DATE:</span> 2025-05-05</div>
+      <div><span class="handwritten">REV:</span> B</div> <!-- Revision up -->
+    </div>
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 

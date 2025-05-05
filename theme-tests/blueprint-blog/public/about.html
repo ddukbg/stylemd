@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Architects+Daughter&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blueprint-bg: #00416a; /* Traditional Blueprint Blue */
+      --blueprint-line: #ffffff;
+      --blueprint-text: #e0f2f7; /* Light cyan text */
+      --blueprint-accent: #a7ffeb; /* Teal accent */
+      --blueprint-grid: rgba(255, 255, 255, 0.1);
+      --blueprint-container-bg: rgba(0, 65, 106, 0.8);
+    }
+    body {
+      background-color: var(--blueprint-bg);
+      background-image: linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px);
+      background-size: 20px 20px; /* Grid size */
+      color: var(--blueprint-text);
+      font-family: 'Roboto Mono', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+      padding: 30px;
+    }
+    .blueprint-container {
+      background-color: var(--blueprint-container-bg);
+      border: 1px solid var(--blueprint-line);
+      padding: 20px 30px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    .title-block {
+        border: 1px solid var(--blueprint-line);
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 10px;
+        background-color: var(--blueprint-bg);
+        text-align: right;
+        color: var(--blueprint-line); /* White text in title block */
+    }
+    .title-block div { margin-bottom: 2px; }
+    .handwritten {
+        font-family: 'Architects Daughter', cursive;
+        color: var(--blueprint-text); /* Light cyan annotations */
+        font-size: 0.9em;
+    }
+    /* Markdown content styling */
+    h1, h2, h3 {
+      color: var(--blueprint-line); /* White headings */
+      border-bottom: 1px solid var(--blueprint-line);
+      padding-bottom: 5px;
+      margin-top: 1.5em;
+      margin-bottom: 0.8em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+    h3 { font-size: 1.1em; }
+    p { margin: 0.8em 0; }
+    ul, ol {
+      padding-left: 30px;
+      margin: 0.8em 0;
+    }
+    li {
+      margin-bottom: 0.3em;
+    }
+    code {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--blueprint-accent);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+    }
+    pre {
+      background-color: rgba(0, 0, 0, 0.2);
+      border: 1px dashed var(--blueprint-line);
+      padding: 15px;
+      margin: 1.5em 0;
+      overflow-x: auto;
+      font-size: 0.9em;
+      position: relative;
+      color: var(--blueprint-text);
+    }
+    pre::before { /* Schematic symbol decoration */
+        content: '// DETAIL VIEW'; /* Changed text */
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-family: 'Architects Daughter', cursive;
+        color: var(--blueprint-line);
+        font-size: 0.8em;
+        background-color: var(--blueprint-bg);
+        padding: 0 5px;
+    }
+    pre code {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      color: inherit; /* Inherit text color */
+    }
+    blockquote {
+      border-left: 4px solid var(--blueprint-accent);
+      padding: 10px 15px;
+      margin: 1.5em 0;
+      background-color: var(--blueprint-container-bg);
+      color: var(--blueprint-text);
+      font-style: italic;
+      position: relative;
+    }
+    blockquote::before { /* Annotation symbol */
+        content: '> NOTE:';
+        display: block;
+        font-family: 'Architects Daughter', cursive;
+        font-style: normal;
+        font-size: 0.9em;
+        color: var(--blueprint-line);
+        margin-bottom: 5px;
+    }
+    a {
+      color: var(--blueprint-accent);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--blueprint-accent);
+    }
+    a:hover {
+      color: var(--blueprint-line);
+      border-bottom-style: solid;
+    }
+    hr {
+        border: none;
+        border-top: 1px dashed var(--blueprint-line); /* White dashed line */
+        margin: 2em 0;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 1.5em 0;
+      width: 100%;
+      border: 1px solid var(--blueprint-line);
+      font-size: 0.9em;
+    }
+    th, td {
+      border: 1px dashed var(--blueprint-line); /* Dashed internal lines */
+      padding: 0.5em 0.7em;
+      text-align: left;
+    }
+    th {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--blueprint-line);
+      font-weight: 700;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--blueprint-line);
+    }
+    td {
+        color: var(--blueprint-text);
+    }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body>
+  <div class="blueprint-container">
+    <header>
+  <h1>About</h1>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+  </nav>
+  </header>
+    <h1 id="about-me"><a href="#about-me" class="header-anchor"></a>About Me</h1><h2 id="who-am-i-"><a href="#who-am-i-" class="header-anchor"></a>Who Am I?</h2><p>I&#39;m a passionate web developer and designer who enjoys creating digital experiences that are both functional and aesthetically pleasing. With a background in computer science and a love for creativity, I bridge the gap between technical and visual aspects of web development.</p>
+<p><img src="https://i.pravatar.cc/300" alt="Profile Photo"></p>
+<h2 id="my-skills"><a href="#my-skills" class="header-anchor"></a>My Skills</h2><div class="mermaid">pie title Skills Distribution
+    "Frontend" : 40
+    "Backend" : 30
+    "Design" : 20
+    "DevOps" : 10</div><h2 id="experience"><a href="#experience" class="header-anchor"></a>Experience</h2><p>I&#39;ve worked with a variety of technologies and frameworks, focusing primarily on:</p>
+<ul>
+<li>React and Vue.js for frontend development</li>
+<li>Node.js and Python for backend services</li>
+<li>UI/UX design principles</li>
+<li>Technical writing and documentation</li>
+</ul>
+<h2 id="get-in-touch"><a href="#get-in-touch" class="header-anchor"></a>Get In Touch</h2><p>Feel free to reach out to me through any of the social media links in the footer. I&#39;m always open to interesting projects and collaborations!</p>
+
+
+    <div class="title-block">
+      <div><span class="handwritten">PROJECT:</span> STYLEMD</div>
+      <div><span class="handwritten">SHEET:</span> 01</div>
+      <div><span class="handwritten">DATE:</span> 2025-05-05</div>
+      <div><span class="handwritten">REV:</span> B</div> <!-- Revision up -->
+    </div>
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} - {{siteTitle}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0050a0; /* Amiga Blue */
+      color: #000000;
+      font-family: 'Silkscreen', 'Topaz', sans-serif; /* Pixel font reminiscent of Topaz */
+      font-size: 13px; /* Similar to Amiga Workbench font size */
+      line-height: 1.2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .amiga-menubar {
+      background-color: #ffffff;
+      color: #0050a0; /* Blue text */
+      height: 13px; /* Classic height */
+      line-height: 13px;
+      padding: 0 5px;
+      border-bottom: 1px solid #000000;
+      display: flex;
+      justify-content: flex-end; /* Menus typically right-aligned */
+      font-size: 11px;
+    }
+    .amiga-menubar-item {
+      margin-left: 15px;
+      cursor: default;
+    }
+    .amiga-window-container {
+      padding: 10px;
+      flex-grow: 1;
+      background: repeating-linear-gradient(45deg, #0050a0, #0050a0 5px, #004090 5px, #004090 10px); /* Subtle diagonal pattern */
+    }
+    .amiga-window {
+      background-color: #aaaaaa; /* Amiga Gray */
+      border: 1px solid #000000;
+      box-shadow: 2px 2px 0px #000000;
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .amiga-titlebar {
+      background-color: #0050a0; /* Blue titlebar */
+      color: #ffffff; /* White text */
+      padding: 1px 5px;
+      height: 11px;
+      line-height: 11px;
+      border-bottom: 1px solid #000000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+    }
+    .amiga-controls button {
+       border: 1px solid #000000;
+       border-top-color: #ffffff; /* White top */
+       border-left-color: #ffffff; /* White left */
+       background-color: #aaaaaa;
+       width: 9px;
+       height: 9px;
+       padding: 0;
+       margin-left: 2px;
+       cursor: default;
+    }
+    .amiga-content {
+      padding: 8px 10px;
+      min-height: 150px;
+      overflow-y: auto;
+    }
+    /* Markdown styling */
+    .amiga-content h1, .amiga-content h2, .amiga-content h3 {
+        margin-top: 0.8em;
+        margin-bottom: 0.4em;
+        color: #000000;
+        font-weight: normal;
+        border-bottom: 1px solid #000000;
+        padding-bottom: 2px;
+    }
+    .amiga-content h1 { font-size: 1.5em; color: #f08000; /* Orange heading */ }
+    .amiga-content h2 { font-size: 1.2em; }
+    .amiga-content h3 { font-size: 1em; }
+    .amiga-content p { margin: 0.6em 0; }
+    .amiga-content ul, .amiga-content ol {
+        padding-left: 20px;
+        margin: 0.6em 0;
+        list-style: none;
+    }
+    .amiga-content li::before {
+        content: "\25CF"; /* Black circle bullet */
+        color: #f08000; /* Orange bullet */
+        margin-right: 6px;
+        font-size: 0.8em;
+    }
+    .amiga-content code {
+        background-color: #cccccc;
+        padding: 0.1em 0.3em;
+        color: #0050a0; /* Blue code text */
+    }
+    .amiga-content pre {
+        background-color: #cccccc;
+        border: 1px solid #000000;
+        padding: 6px;
+        margin: 1em 0;
+        overflow-x: auto;
+        font-size: 12px;
+    }
+    .amiga-content pre code { background-color: transparent; padding: 0; }
+
+    .amiga-content blockquote {
+        border: 1px dashed #000000;
+        padding: 5px 10px;
+        margin: 1em 0;
+        background-color: #bbbbbb;
+    }
+    .amiga-content blockquote p { margin: 0.3em 0; }
+
+    .amiga-content table {
+        border-collapse: collapse;
+        margin: 1em 0;
+        width: 100%;
+        border: 1px solid #000000;
+    }
+    .amiga-content th, .amiga-content td {
+        border: 1px solid #000000;
+        padding: 3px 5px;
+        text-align: left;
+    }
+     .amiga-content th {
+        background-color: #ffffff;
+        color: #0050a0;
+        font-weight: normal;
+     }
+     .amiga-content td {
+        background-color: #cccccc;
+     }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="amiga-menubar">
+    <div class="amiga-menubar-item">Project</div>
+    <div class="amiga-menubar-item">Edit</div>
+    <div class="amiga-menubar-item">Options</div>
+    <div class="amiga-menubar-item">Workbench</div>
+  </div>
+  <div class="amiga-window-container">
+    <div class="amiga-window">
+      <div class="amiga-titlebar">
+        <span>RAM_Disk:MyProject/Notes</span>
+        <div class="amiga-controls">
+          <button title="Depth"></button>
+          <button title="Zoom"></button>
+          <button title="Close"></button>
+        </div>
+      </div>
+      <div class="amiga-content">
+        <header>
+    <h1>{{title}}</h1>
+    <p><small>{{date}} {{time}}</small></p>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      {{#each navigationLinks}}
+        <a href="{{title}}.html">{{title}}</a>
+      {{/each}}
+    </nav>
+  </header>
+    {{{content}}}
+      </div>
+    </div>
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 
