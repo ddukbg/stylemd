@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Sample Post - </title>
+  
+  <style>
+    body {
+      background-color: #008080; /* Teal */
+      color: black;
+      font-family: 'Tahoma', 'MS Sans Serif', sans-serif; /* Original Windows 98 fonts */ /* Use Pixelify Sans, fallback to Tahoma */
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevent scrollbars on body */
+    }
+    .win98-container {
+      padding: 15px;
+    }
+    .win98-window {
+      background-color: #c0c0c0; /* Silver */
+      border-top: 2px solid #ffffff;
+      border-left: 2px solid #ffffff;
+      border-right: 2px solid #808080; /* Gray */
+      border-bottom: 2px solid #808080;
+      box-shadow: 1px 1px 0 #000000;
+      display: flex;
+      flex-direction: column;
+      min-width: 300px;
+      max-width: 800px; /* Limit window width */
+      margin: 0 auto; /* Center the window */
+    }
+    .win98-titlebar {
+      background: linear-gradient(to right, #000080, #1084d0); /* Navy to Blue gradient */
+      color: white;
+      padding: 3px 5px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 18px;
+    }
+    .win98-titlebar-text::before {
+      content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACGSURBVDhPY/z//z8DNwMDw8zAALyZgUE4//+hMMEAglgGJxAPkNwAEieAmAMRL679vxjAxH8gNvz/MFAMgokBAZgIA5j8/zAIFwQDX//8/yHz//8HY+A/FFp+//9/ZkDB//+D+B+I/P//f2KAwv+//w/E/0Hk////HxQCYOKDAgMDAwMArcUqD+3hWzQAAAAASUVORK5CYII='); /* Tiny icon */
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .win98-controls button {
+      background-color: #c0c0c0;
+      border-top: 1px solid #ffffff;
+      border-left: 1px solid #ffffff;
+      border-right: 1px solid #808080;
+      border-bottom: 1px solid #808080;
+      width: 16px;
+      height: 14px;
+      font-family: 'Tahoma', 'MS Sans Serif', sans-serif; /* Original Windows 98 fonts */ /* Font for symbols */
+      font-size: 10px;
+      padding: 0;
+      margin-left: 2px;
+      line-height: 12px;
+      text-align: center;
+      cursor: default;
+    }
+    .win98-content {
+      background-color: white;
+      color: black;
+      padding: 15px;
+      padding-bottom: 65px; /* 작업 표시줄 높이보다 훨씬 크게 설정 */
+      margin: 3px;
+      border: 1px solid #808080;
+      border-right-color: #ffffff;
+      border-bottom-color: #ffffff;
+      overflow-y: auto; /* Add scrollbar if content overflows */
+      max-height: calc(100vh - 70px); /* Limit content height */
+    }
+    /* Markdown content styling */
+    .win98-content h1, .win98-content h2, .win98-content h3 {
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        font-weight: normal;
+    }
+    .win98-content h1 { font-size: 1.5em; }
+    .win98-content h2 { font-size: 1.2em; }
+    .win98-content h3 { font-size: 1em; }
+    .win98-content p { margin: 0.5em 0; line-height: 1.4; }
+    .win98-content ul, .win98-content ol {
+        padding-left: 20px;
+        margin: 0.5em 0;
+        list-style-type: none; /* Remove default bullet */
+    }
+    .win98-content ul li::before {
+        content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABRSURBVDhPY1hZWfEfA57///9/gJqGhoa/AxMDFQDEyMioAJE/MDAwMP7/n1iAIAMAwSIEEMUyQDgIKAZgRUMjIUMDAwMDw+Q/Q9wAEgAArHIHqcGD3XAAAAAASUVORK5CYII='); /* Folder icon */
+        margin-right: 5px;
+    }
+    .win98-content ol {
+        counter-reset: item;
+    }
+    .win98-content ol li::before {
+        content: counter(item) ". ";
+        counter-increment: item;
+        margin-right: 5px;
+        font-weight: normal;
+    }
+    .win98-content code {
+        font-family: 'Tahoma', 'MS Sans Serif', sans-serif; /* Original Windows 98 fonts */
+        background-color: #e0e0e0; /* Slightly different gray */
+        padding: 0.1em 0.3em;
+        border: 1px solid #b0b0b0;
+        font-size: 0.95em;
+    }
+    .win98-content pre {
+        font-family: 'Tahoma', 'MS Sans Serif', sans-serif; /* Original Windows 98 fonts */
+        background-color: #ffffff; /* White background like notepad */
+        border: 1px solid #808080; /* Simple gray border */
+        padding: 10px;
+        margin: 1em 0;
+        overflow-x: auto;
+        white-space: pre;
+        font-size: 1em; /* Reset pre font size */
+    }
+    .win98-content pre code {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+    .win98-content blockquote {
+        border: 1px solid #808080;
+        border-left: 5px solid #000080; /* Navy blue left border */
+        padding: 10px 15px 10px 35px; /* Space for icon */
+        margin: 1em 0;
+        color: #333;
+        background-color: #f8f8f8;
+        position: relative;
+    }
+    .win98-content blockquote::before {
+        content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADdSURBVDhPY/z//z8DNwMDw8zAALyZgYHh99+/GP7/+wsDw/8DCIAZGBgYGJgY/P79+8/Awfj9+zeQIJAHiNX/P3/+/GFgYADifkBsABIAEgDxCRAfAeJzQNwIxP/Pnz8ZIEA3AHGQDgBCcgApLgfE/0D8H4j/A/EzkOAASOQHxP+hMvz9+xcejIz/Hwz///9/kARjYGADif//////+vXrFxj+/fvHABIMMAARjwCZAAC5sZUY/zM8gQAAAABJRU5ErkJggg=='); /* Info icon */
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+    .win98-content hr {
+        border: none;
+        border-top: 1px solid #808080; /* Gray top */
+        border-bottom: 1px solid #ffffff; /* White bottom */
+        height: 2px;
+        margin: 1em 0;
+    }
+    .win98-statusbar {
+      background-color: #c0c0c0;
+      border-top: 1px solid #808080;
+      border-left: 1px solid #808080;
+      border-right: 1px solid #ffffff;
+      border-bottom: 1px solid #ffffff;
+      padding: 2px 5px;
+      height: 18px;
+      display: flex;
+    }
+    .win98-statusbar-panel {
+      border-top: 1px solid #808080;
+      border-left: 1px solid #808080;
+      border-right: 1px solid #ffffff;
+      border-bottom: 1px solid #ffffff;
+      padding: 0 5px;
+      margin-right: 2px;
+      flex-grow: 1;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    /* Windows 98 Button Style */
+    .win98-button {
+      display: inline-block;
+      background-color: #c0c0c0;
+      color: #000;
+      border-top: 1px solid #ffffff;
+      border-left: 1px solid #ffffff;
+      border-right: 1px solid #808080;
+      border-bottom: 1px solid #808080;
+      padding: 3px 8px;
+      margin: 2px;
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+      box-shadow: 1px 1px 0 #000000;
+    }
+    .win98-button:hover {
+      background-color: #d0d0d0;
+    }
+    .win98-button:active {
+      background-color: #b0b0b0;
+      border-top: 1px solid #808080;
+      border-left: 1px solid #808080;
+      border-right: 1px solid #ffffff;
+      border-bottom: 1px solid #ffffff;
+      box-shadow: none;
+    }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body>
+  <div class="win98-container">
+    <div class="win98-window">
+      <div class="win98-titlebar">
+        <span class="win98-titlebar-text">My Document</span>
+        <div class="win98-controls">
+          <button title="Minimize">_</button>
+          <button title="Maximize">&#9633;</button> <!-- Square symbol -->
+          <button title="Close">X</button>
+        </div>
+      </div>
+      <div class="win98-content">
+        <header>
+    <h1>Markdown Sample Post</h1>
+    <p><small>2025-05-05 9:00 AM</small></p>
+    <nav class="nav-links">
+      <a href="index.html" class="win98-button">Home</a>
+        <a href="About.html" class="win98-button">About</a>
+        <a href="Projects.html" class="win98-button">Projects</a>
+    </nav>
+  </header>
+    <h1 id="markdown-sample-post"><a href="#markdown-sample-post" class="header-anchor"></a>Markdown Sample Post</h1><p>This post demonstrates various Markdown elements and features supported by StyleMD.</p>
+<h2 id="1-text-formatting"><a href="#1-text-formatting" class="header-anchor"></a>1. Text Formatting</h2><p>Regular text with <strong>bold text</strong>, <em>italic text</em>, and <del>strikethrough</del>.</p>
+<blockquote>
+<p>This is a blockquote. It&#39;s used for emphasizing important content.</p>
+<p>It can also span multiple paragraphs.</p>
+</blockquote>
+<h2 id="2-lists"><a href="#2-lists" class="header-anchor"></a>2. Lists</h2><h3 id="unordered-list-"><a href="#unordered-list-" class="header-anchor"></a>Unordered List:</h3><ul>
+<li>Item 1</li>
+<li>Item 2<ul>
+<li>Nested item 2.1</li>
+<li>Nested item 2.2</li>
+</ul>
+</li>
+<li>Item 3</li>
+</ul>
+<h3 id="ordered-list-"><a href="#ordered-list-" class="header-anchor"></a>Ordered List:</h3><ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+<h2 id="3-code"><a href="#3-code" class="header-anchor"></a>3. Code</h2><p>Inline code: <code>console.log(&#39;Hello, World!&#39;)</code></p>
+<p>Code block:</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">greet</span>(<span class="hljs-string">&#x27;World&#x27;</span>));</code></pre><h2 id="4-links-and-images"><a href="#4-links-and-images" class="header-anchor"></a>4. Links and Images</h2><p><a href="https://github.com/ddukbg/stylemd">StyleMD GitHub Page</a></p>
+<p><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nature Image"></p>
+<h2 id="5-tables"><a href="#5-tables" class="header-anchor"></a>5. Tables</h2><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Profession</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>John Doe</td>
+<td>30</td>
+<td>Developer</td>
+</tr>
+<tr>
+<td>Jane Smith</td>
+<td>25</td>
+<td>Designer</td>
+</tr>
+<tr>
+<td>Emily Johnson</td>
+<td>28</td>
+<td>Marketer</td>
+</tr>
+</tbody></table>
+<h2 id="6-horizontal-rule"><a href="#6-horizontal-rule" class="header-anchor"></a>6. Horizontal Rule</h2><p>Below is a horizontal rule:</p>
+<hr>
+<h2 id="7-task-lists"><a href="#7-task-lists" class="header-anchor"></a>7. Task Lists</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> Completed task</li>
+<li><input disabled="" type="checkbox"> Incomplete task</li>
+<li><input checked="" disabled="" type="checkbox"> Another completed task</li>
+</ul>
+<h2 id="8-footnotes"><a href="#8-footnotes" class="header-anchor"></a>8. Footnotes</h2><p>This has a footnote[^1].</p>
+<p>[^1]: This is the footnote content.</p>
+<h2 id="9-definition-list"><a href="#9-definition-list" class="header-anchor"></a>9. Definition List</h2><p>StyleMD
+: A tool that converts Markdown files to HTML with various styles</p>
+<p>Markdown
+: A lightweight markup language with plain-text formatting syntax</p>
+<h2 id="10-mermaid-diagrams"><a href="#10-mermaid-diagrams" class="header-anchor"></a>10. Mermaid Diagrams</h2><p>StyleMD also supports Mermaid diagrams:</p>
+<div class="mermaid">graph TD
+    A[Start] --> B{Is it Markdown?}
+    B -->|Yes| C[Process with StyleMD]
+    B -->|No| D[Use another tool]
+    C --> E[Generate HTML]
+    E --> F[Apply Theme]
+    F --> G[Final Output]
+    D --> G</div><p>Flowchart example:</p>
+<div class="mermaid">flowchart LR
+    A[Input] --> B(Process)
+    B --> C{Decision}
+    C -->|One| D[Output 1]
+    C -->|Two| E[Output 2]</div><p>Sequence diagram:</p>
+<div class="mermaid">sequenceDiagram
+    participant User
+    participant StyleMD
+    participant Browser
+    
+    User->>StyleMD: Edit Markdown
+    StyleMD->>StyleMD: Process Markdown
+    StyleMD->>Browser: Generate HTML
+    Browser->>User: Display Result</div><h2 id="11-mathematical-formulas"><a href="#11-mathematical-formulas" class="header-anchor"></a>11. Mathematical Formulas</h2><p>Some math expressions: $E = mc^2$</p>
+<p>$$
+\frac{d}{dx}(x^n) = nx^{n-1}
+$$</p>
+
+    <!-- 하단 여백 추가 -->
+    <div style="height: 60px;"></div>
+      </div>
+      <div class="win98-statusbar">
+        <div class="win98-statusbar-panel">Ready</div>
+        <div class="win98-statusbar-panel" style="flex-grow: 0;">CAPS</div>
+        <div class="win98-statusbar-panel" style="flex-grow: 0;">NUM</div>
+      </div>
+    </div>
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+  <!-- Taskbar simulation -->
+  <div style="position: fixed; bottom: 0; left: 0; width: 100%; height: 28px; background: #c0c0c0; border-top: 2px solid #ffffff; display: flex; align-items: center; z-index: 999;">
+    <button style="background: #c0c0c0; border-top: 1px solid #ffffff; border-left: 1px solid #ffffff; border-right: 1px solid #808080; border-bottom: 1px solid #808080; font-weight: bold; margin: 2px; padding: 2px 5px; display: flex; align-items: center;">
+        <img src="https://e7.pngegg.com/pngimages/124/301/png-clipart-windows-95-windows-98-computer-icons-microsoft-text-rectangle-thumbnail.png" alt="Start" style="height: 16px; margin-right: 4px;">
+    </button>
+    <!-- Add active program buttons here if needed -->
+    <div style="flex-grow: 1;"></div> <!-- Spacer -->
+    <div style="border-top: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 2px 5px; margin: 2px; font-size: 11px;">4:53 PM</div>
+  </div>
+</body>
+</html> 

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploring Hidden Gems of Southeast Asia - </title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet"> <!-- Slightly more readable Comic Sans alternative -->
+  <style>
+    body {
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      background-color: #DDDDDD;
+      color: #00008B; /* Dark Blue */
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+        max-width: 750px; /* Limit width for better readability */
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+        padding: 15px;
+        border: 5px ridge #FF00FF; /* Magenta ridge border */
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+    h1, h2, h3 {
+      color: #00008B;
+      text-shadow: 2px 2px #FF00FF; /* Magenta shadow */
+      font-weight: 700;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+    h1 {
+        font-size: 2.5em;
+        animation: rainbow-text 5s infinite linear;
+    }
+    h2 {
+        font-size: 1.8em;
+        text-decoration: underline wavy #FFFF00; /* Yellow wavy underline */
+        display: inline-block; /* Needed for marquee */
+    }
+    h2 marquee {
+        display: inline; /* Allow marquee inside h2 */
+    }
+    @keyframes rainbow-text {
+        0% { color: red; }
+        15% { color: orange; }
+        30% { color: yellow; }
+        45% { color: green; }
+        60% { color: blue; }
+        75% { color: indigo; }
+        90% { color: violet; }
+        100% { color: red; }
+    }
+    .construction {
+      height: 60px; /* Slightly larger */
+      margin: 10px;
+      vertical-align: middle;
+    }
+    .button {
+      background-color: #FFFF00; /* Yellow */
+      color: #00008B; /* Dark Blue */
+      border: 3px outset #FF00FF; /* Magenta outset border */
+      padding: 10px 20px;
+      text-decoration: none;
+      margin: 5px;
+      display: inline-block;
+      font-weight: bold;
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+    .button:hover {
+        transform: scale(1.1);
+        background-color: #FFDD00; /* Darker yellow on hover */
+    }
+    .blink {
+        animation: blink-animation 1s steps(2, start) infinite;
+    }
+    @keyframes blink-animation {
+        to {
+            visibility: hidden;
+        }
+    }
+    hr {
+        border: none;
+        height: 10px;
+        background: url('https://www.animatedimages.org/data/media/562/animated-line-image-0363.gif') repeat-x center;
+        margin: 20px 0;
+    }
+    /* Markdown content styling */
+    p { line-height: 1.5; margin: 1em 0; }
+    ul, ol {
+        text-align: left;
+        padding-left: 40px;
+        margin: 1em 0;
+        list-style-type: none; /* Remove default */
+    }
+    ul li::before {
+        content: "★ "; /* Star bullet */
+        color: #FF00FF; /* Magenta */
+        font-size: 1.2em;
+        margin-right: 5px;
+        animation: spin 2s infinite linear;
+        display: inline-block; /* Needed for animation */
+    }
+    ol {
+        counter-reset: item;
+    }
+    ol li::before {
+        content: counter(item) ") "; /* Number followed by parenthesis */
+        counter-increment: item;
+        color: #008000; /* Green */
+        font-weight: bold;
+        margin-right: 5px;
+    }
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    code {
+        background-color: #FFFF00; /* Yellow background */
+        color: #FF00FF; /* Magenta text */
+        padding: 2px 4px;
+        border: 1px dashed red;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+    }
+    pre {
+        background: linear-gradient(to bottom, #FF00FF, #00FFFF); /* Magenta to Cyan gradient */
+        border: 5px groove #FFFF00; /* Yellow groove border */
+        padding: 15px;
+        margin: 1em 0;
+        text-align: left;
+        overflow-x: auto;
+        color: #00008B; /* Dark blue text */
+        font-family: 'Courier New', monospace;
+    }
+    blockquote {
+        border: 5px dotted #FF00FF; /* Magenta dotted border */
+        padding: 10px;
+        margin: 1em 10px;
+        background-color: rgba(255,255,0,0.2); /* Light yellow background */
+        font-style: italic;
+        text-align: left;
+    }
+    .visitor-counter {
+        margin-top: 20px;
+        font-size: 0.9em;
+    }
+    .visitor-counter img {
+        vertical-align: middle;
+        height: 20px; /* Standard counter height */
+        margin: 0 2px;
+    }
+    /* Style for CSS-based counter digits */
+    .digit {
+        display: inline-block;
+        background-color: black;
+        color: lime; /* Or another bright color */
+        font-family: monospace;
+        font-size: 18px;
+        padding: 0 3px;
+        border: 1px solid #333;
+        border-radius: 2px;
+        line-height: 20px;
+        vertical-align: middle;
+        margin: 0 1px;
+        min-width: 12px; /* Ensure consistent width */
+        text-align: center;
+    }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body>
+  <div class="container">
+    <h1><marquee behavior="alternate" scrollamount="10">✨★* Welcome 2 my Kewl GeoCities Page! *★✨</marquee></h1>
+
+    <img src="https://www.animatedimages.org/data/media/1664/animated-work-in-progress-image-0020.gif" alt="Under Construction" class="construction">
+    <span class="blink" style="font-size: 1.2em; color: red; font-weight: bold;"> SITE UNDER CONSTRUCTION!!! </span>
+    <img src="https://www.animatedimages.org/data/media/1664/animated-work-in-progress-image-0020.gif" alt="Under Construction" class="construction">
+
+    <hr>
+
+    <header>
+    <h1>Exploring Hidden Gems of Southeast Asia</h1>
+    <p><small>2025-03-15 9:00 AM</small></p>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Projects.html">Projects</a>
+    </nav>
+  </header>
+    <h1 id="exploring-hidden-gems-of-southeast-asia"><a href="#exploring-hidden-gems-of-southeast-asia" class="header-anchor"></a>Exploring Hidden Gems of Southeast Asia</h1><p>Southeast Asia offers a wealth of experiences beyond the well-trodden tourist paths. This post uncovers some of the region&#39;s most enchanting hidden gems.</p>
+<h2 id="1-the-ancient-village-of-ban-chiang-thailand"><a href="#1-the-ancient-village-of-ban-chiang-thailand" class="header-anchor"></a>1. The Ancient Village of Ban Chiang, Thailand</h2><p>Ban Chiang is a UNESCO World Heritage site known for its archaeological discoveries. The area reveals ancient pottery and bronze artifacts dating back over 5,000 years.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Museum_f%C3%BCr_Indische_Kunst_Dahlem_Berlin_Mai_2006_056.jpg/250px-Museum_f%C3%BCr_Indische_Kunst_Dahlem_Berlin_Mai_2006_056.jpg" alt="Ban Chiang Pottery"></p>
+<blockquote>
+<p>The quiet village atmosphere and the extraordinary museum make Ban Chiang a perfect escape from Thailand&#39;s busy tourist centers.</p>
+</blockquote>
+<h2 id="2-phong-nha-k-b-ng-national-park-vietnam"><a href="#2-phong-nha-k-b-ng-national-park-vietnam" class="header-anchor"></a>2. Phong Nha-Kẻ Bàng National Park, Vietnam</h2><p>Home to some of the world&#39;s largest and most spectacular caves, this national park offers breathtaking landscapes and underground rivers.</p>
+<h3 id="notable-caves-"><a href="#notable-caves-" class="header-anchor"></a>Notable Caves:</h3><ol>
+<li>Sơn Đoòng Cave (world&#39;s largest cave)</li>
+<li>Paradise Cave</li>
+<li>Phong Nha Cave</li>
+</ol>
+<div class="mermaid">graph LR
+    A[Phong Nha Town] --> B[Paradise Cave]
+    A --> C[Phong Nha Cave]
+    A --> D[Dark Cave]
+    A --> E[Sơn Đoòng Expedition]
+    style E fill:#f9f,stroke:#333,stroke-width:2px</div><h2 id="3-mrauk-u-myanmar"><a href="#3-mrauk-u-myanmar" class="header-anchor"></a>3. Mrauk U, Myanmar</h2><p>Once a powerful kingdom, Mrauk U is now a mesmerizing archaeological site with hundreds of temples and pagodas scattered across the hills.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Mrauk_U_Landscape.jpg/250px-Mrauk_U_Landscape.jpg" alt="Mrauk U Temples"></p>
+<h2 id="4-baliem-valley-indonesia"><a href="#4-baliem-valley-indonesia" class="header-anchor"></a>4. Baliem Valley, Indonesia</h2><p>Tucked away in Papua&#39;s highlands, the Baliem Valley offers extraordinary landscapes and the opportunity to meet indigenous Dani people.</p>
+<table>
+<thead>
+<tr>
+<th>Season</th>
+<th>Weather</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>June-August</td>
+<td>Dry and cool</td>
+<td>Ideal for trekking</td>
+</tr>
+<tr>
+<td>September-May</td>
+<td>Variable rain</td>
+<td>Less crowded, lush scenery</td>
+</tr>
+</tbody></table>
+<h2 id="5-kampong-ayer-brunei"><a href="#5-kampong-ayer-brunei" class="header-anchor"></a>5. Kampong Ayer, Brunei</h2><p>Known as the &quot;Venice of the East,&quot; this water village consists of houses built on stilts connected by wooden walkways.</p>
+<div class="mermaid">flowchart TD
+    A[Arrival at Bandar Seri Begawan] --> B[Water Taxi to Kampong Ayer]
+    B --> C{Activity Choice}
+    C -->|Culture| D[Visit Cultural Gallery]
+    C -->|Traditional Life| E[Local House Visit]
+    C -->|Nature| F[Mangrove Tour]</div><h2 id="6-plain-of-jars-laos"><a href="#6-plain-of-jars-laos" class="header-anchor"></a>6. Plain of Jars, Laos</h2><p>This mysterious archaeological landscape contains thousands of stone jars scattered across the Xieng Khouang Plateau.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/PlainOfJarsView.JPG/330px-PlainOfJarsView.JPG" alt="Plain of Jars"></p>
+<h2 id="7-travel-tips-for-hidden-destinations"><a href="#7-travel-tips-for-hidden-destinations" class="header-anchor"></a>7. Travel Tips for Hidden Destinations</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> Research local customs before visiting</li>
+<li><input checked="" disabled="" type="checkbox"> Learn basic local phrases</li>
+<li><input disabled="" type="checkbox"> Consider hiring local guides</li>
+<li><input checked="" disabled="" type="checkbox"> Pack appropriately for rural conditions</li>
+<li><input disabled="" type="checkbox"> Allow extra time for transportation delays</li>
+</ul>
+<h2 id="8-responsible-tourism"><a href="#8-responsible-tourism" class="header-anchor"></a>8. Responsible Tourism</h2><p>When visiting these lesser-known destinations, responsible tourism practices are especially important:</p>
+<ol>
+<li>Support local businesses</li>
+<li>Minimize environmental impact</li>
+<li>Respect cultural sites and traditions</li>
+<li>Engage meaningfully with local communities</li>
+</ol>
+<h2 id="further-planning-resources"><a href="#further-planning-resources" class="header-anchor"></a>Further Planning Resources</h2><p>StyleMD Travel Planner[^1] can help with organizing trips to these destinations.</p>
+<p>[^1]: Fictional service used for demonstration purposes.</p>
+<p>Happy exploring!</p>
+
+
+    <hr>
+
+    <p>
+      <a href="#" class="button">Sign My Guestbook!</a>
+      <a href="#" class="button">View My Cool Links</a>
+      <a href="#" class="button">Web Rings</a>
+    </p>
+
+    <div class="visitor-counter">
+      <img src="data:image/gif;base64,R0lGODlhWAAxAPcAAHx+fExaXIyWjExSXExaXLzGvLy+vKyyrHyGhExSXKy2rKyyrExaXLzGvKyyrLS6tExaXLzGvKyyrLS6tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAWAAxAAAI/gABCBxIsKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBjypxJs6bNmzhz6tzJs6fPn0CDCh1KtKjRo0iTKl3KtKnTp1CjSp1KtarVq1izat3KtavXr2DDih1LtqzZs2jTql3Ltq3bt3Djyp1Lt67du3jz6t3Lt6/fv4ADCx5MuLDhw4gTK17MuLHjx5AjS55MubLly5gza97MubPnz6BDix5NurTp06hTq17NurXr17Bjy55Nu7bt27hz697Nu7fv38CDCx9OvLjx48iTK1/OvLnz59CjS59Ovbr169iza9/Ovbv37+DD/osfT768+fPo06tfz769+/fw48ufT7++/fv48+vfz7+///8ABijggAQWaOCBCCao4IIMNujggxBGKOGEFFZo4YUYZqjhhhx26OGHIIYo4ogklmjiiSimqOKKLLbo4oswxijjjDTWaOONOOao44489ujjj0AGKeSQRBZp5JFIJqnkkkw26eSTUEYp5ZRUVmnllVhmqeWWXHbp5ZdghinmmGSWaeaZaKap5ppstunmm3DGKeecdNZp55145qnnnnz26eefgAYq6KCEFmrooYgmquiijDbq6KOQRirppJRWaumlmGaq6aacdurpp6CGKuqopJZq6qmopqrqqqy26uqrsMYq66y0/NZq66245qrpppz26OqveaqQQAILrDAAAw004MACDTjAgAQUSLDABA8oUEACDDDAQAQWZKDABA44gMICD2RgQAUMMMBAAxFksEADDjzwAAQQSLCBBQoUwAABCyDQwAQQZKDABA4oYIECDTDQwAQQZKDABA440IACDTwAAgQRSTDBBQoUUMABCyDQwAQQZKDABA8ocIECDTDQwAQQZKDABA44sIDCxAQEADs=" alt="IE Logo" style="height: 31px;">
+      <img src="data:image/gif;base64,R0lGODlhWAAxAPcAAExaXLzGvKyyrKyyrKyyrExaXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAWAAxAAAI/gABCBxIsKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBjypxJs6bNmzhz6tzJs6fPn0CDCh1KtKjRo0iTKl3KtKnTp1CjSp1KtarVq1izat3KtavXr2DDih1LtqzZs2jTql3Ltq3bt3Djyp1Lt67du3jz6t3Lt6/fv4ADCx5MuLDhw4gTK17MuLHjx5AjS55MubLly5gza97MubPnz6BDix5NurTp06hTq17NurXr17Bjy55Nu7bt27hz697Nu7fv38CDCx9OvLjx48iTK1/OvLnz59CjS59Ovbr169iza9/Ovbv37+DD/osfT768+fPo06tfz769+/fw48ufT7++/fv48+vfz7+///8ABijggAQWaOCBCCao4IIMNujggxBGKOGEFFZo4YUYZqjhhhx26OGHIIYo4ogklmjiiSimqOKKLLbo4oswxijjjDTWaOONOOao44489ujjj0AGKeSQRBZp5JFIJqnkkkw26eSTUEYp5ZRUVmnllVhmqeWWXHbp5ZdghinmmGSWaeaZaKap5ppstunmm3DGKeecdNZp55145qnnnnz26eefgAYq6KCEFmrooYgmquiijDbq6KOQRirppJRWaumlmGaq6aacdurpp6CGKuqopJZq6qmopqrqqqy26uqrsMYq66y0/NZq66245qrpppyGKuyTww7pbJLNMguttNZma0IDCjTrbLQ+LMCAAw9QwAEHLLDqAbnstuupAgwocMECClBwAAAOOOAABBJYoAEHHHCgAQgoUMACCywAQgMOOOCAAwlQsEADDTzgAAQQSCAAAQkYYEACDTwAAgQRSTDBBQoUwAAEFiiwwAQQZKDABAoUgEADDDDQwAQQZKDABA440MADCiRQQAUMMMBAAxFksEADDjzwgAQQSLCBBQoUwAACCyDQwAQQZLAAAgUIBAA7" alt="Netscape Logo" style="height: 31px;">
+      <br>
+      You are visitor #
+      <!-- Replace img tags with styled spans -->
+      <span class="digit">0</span><span class="digit">0</span><span class="digit">1</span><span class="digit">3</span><span class="digit">3</span><span class="digit">7</span>
+      <span class="blink">!!!</span>
+    </div>
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 

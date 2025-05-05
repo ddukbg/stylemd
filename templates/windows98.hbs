@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Page - Windows 98 Style</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap" rel="stylesheet">
+  <title>My Document</title>
   <style>
     body {
       background-color: #008080; /* Teal */
       color: black;
-      font-family: 'Pixelify Sans', 'Tahoma', sans-serif; /* Use Pixelify Sans, fallback to Tahoma */
-      font-size: 12px;
+      font-family: 'Tahoma', 'MS Sans Serif', sans-serif; /* Windows 98 fonts only */
+      font-size: 11px;
       margin: 0;
       padding: 0;
       overflow: hidden; /* Prevent scrollbars on body */
@@ -54,7 +53,7 @@
       border-bottom: 1px solid #808080;
       width: 16px;
       height: 14px;
-      font-family: 'Marlett', 'Webdings'; /* Font for symbols */
+      font-family: 'Tahoma', sans-serif;
       font-size: 10px;
       padding: 0;
       margin-left: 2px;
@@ -62,89 +61,176 @@
       text-align: center;
       cursor: default;
     }
-    .win98-content {
-      background-color: white;
-      color: black;
-      padding: 15px;
-      margin: 3px;
+    
+    /* Explorer style layout */
+    .explorer-layout {
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - 150px); /* Set a max height to leave room for statusbar */
+    }
+    
+    .explorer-header {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      border-bottom: 1px solid #808080;
+    }
+    
+    .explorer-header-text {
+      margin-left: 5px;
+      font-weight: bold;
+    }
+    
+    .explorer-body {
+      display: flex;
+      flex: 1;
       border: 1px solid #808080;
-      border-right-color: #ffffff;
-      border-bottom-color: #ffffff;
-      overflow-y: auto; /* Add scrollbar if content overflows */
-      max-height: calc(100vh - 70px); /* Limit content height */
+      margin: 3px;
+      background-color: white;
+      position: relative; /* Add relative positioning */
     }
+    
+    .explorer-sidebar {
+      width: 180px;
+      background-color: #c0c0c0;
+      border-right: 2px solid #808080;
+      overflow-y: auto;
+      padding: 5px;
+    }
+    
+    .explorer-sidebar-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .explorer-sidebar-item {
+      display: flex;
+      align-items: center;
+      margin: 3px 0;
+      cursor: pointer;
+      padding: 2px 4px;
+    }
+    
+    .explorer-sidebar-item:hover {
+      background-color: #000080; /* Navy blue */
+      color: white;
+    }
+    
+    .explorer-sidebar-item:active {
+      background-color: #0000AA; /* Darker blue */
+      color: white;
+    }
+    
+    .explorer-sidebar-item::before {
+      content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABRSURBVDhPY1hZWfEfA57///9/gJqGhoa/AxMDFQDEyMioAJE/MDAwMP7/n1iAIAMAwSIEEMUyQDgIKAZgRUMjIUMDAwMDw+Q/Q9wAEgAArHIHqcGD3XAAAAAASUVORK5CYII='); /* Folder icon */
+      margin-right: 5px;
+    }
+    
+    .explorer-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      padding-bottom: 60px; /* Add significant padding at bottom */
+      max-height: calc(100vh - 180px);
+    }
+    
     /* Markdown content styling */
-    .win98-content h1, .win98-content h2, .win98-content h3 {
-        margin-top: 1em;
-        margin-bottom: 0.5em;
-        font-weight: normal;
+    .explorer-content h1, .explorer-content h2, .explorer-content h3 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+      font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
     }
-    .win98-content h1 { font-size: 1.5em; }
-    .win98-content h2 { font-size: 1.2em; }
-    .win98-content h3 { font-size: 1em; }
-    .win98-content p { margin: 0.5em 0; line-height: 1.4; }
-    .win98-content ul, .win98-content ol {
-        padding-left: 20px;
-        margin: 0.5em 0;
-        list-style-type: none; /* Remove default bullet */
+    .explorer-content h1 { font-size: 14px; }
+    .explorer-content h2 { font-size: 13px; }
+    .explorer-content h3 { font-size: 12px; }
+    .explorer-content p { margin: 0.5em 0; line-height: 1.4; }
+    .explorer-content ul, .explorer-content ol {
+      padding-left: 20px;
+      margin: 0.5em 0;
     }
-    .win98-content ul li::before {
-        content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABRSURBVDhPY1hZWfEfA57///9/gJqGhoa/AxMDFQDEyMioAJE/MDAwMP7/n1iAIAMAwSIEEMUyQDgIKAZgRUMjIUMDAwMDw+Q/Q9wAEgAArHIHqcGD3XAAAAAASUVORK5CYII='); /* Folder icon */
-        margin-right: 5px;
+    .explorer-content li {
+      margin-bottom: 3px;
     }
-    .win98-content ol {
-        counter-reset: item;
+    .explorer-content img {
+      max-width: 100%;
+      border: 1px solid #808080;
     }
-    .win98-content ol li::before {
-        content: counter(item) ". ";
-        counter-increment: item;
-        margin-right: 5px;
-        font-weight: normal;
+    .explorer-content code {
+      font-family: 'Courier New', monospace;
+      background-color: #e0e0e0; /* Slightly different gray */
+      padding: 0.1em 0.3em;
+      border: 1px solid #b0b0b0;
+      font-size: 0.95em;
     }
-    .win98-content code {
-        font-family: 'Courier New', monospace;
-        background-color: #e0e0e0; /* Slightly different gray */
-        padding: 0.1em 0.3em;
-        border: 1px solid #b0b0b0;
-        font-size: 0.95em;
+    .explorer-content pre {
+      font-family: 'Courier New', monospace;
+      background-color: #ffffff; /* White background like notepad */
+      border: 1px solid #808080; /* Simple gray border */
+      padding: 10px;
+      margin: 1em 0;
+      overflow-x: auto;
+      white-space: pre;
+      font-size: 1em; /* Reset pre font size */
     }
-    .win98-content pre {
-        font-family: 'Courier New', monospace;
-        background-color: #ffffff; /* White background like notepad */
-        border: 1px solid #808080; /* Simple gray border */
-        padding: 10px;
-        margin: 1em 0;
-        overflow-x: auto;
-        white-space: pre;
-        font-size: 1em; /* Reset pre font size */
+    .explorer-content pre code {
+      background-color: transparent;
+      border: none;
+      padding: 0;
     }
-    .win98-content pre code {
-        background-color: transparent;
-        border: none;
-        padding: 0;
+    .explorer-content blockquote {
+      border: 1px solid #808080;
+      border-left: 5px solid #000080; /* Navy blue left border */
+      padding: 10px 15px;
+      margin: 1em 0;
+      color: #333;
+      background-color: #f8f8f8;
     }
-    .win98-content blockquote {
-        border: 1px solid #808080;
-        border-left: 5px solid #000080; /* Navy blue left border */
-        padding: 10px 15px 10px 35px; /* Space for icon */
-        margin: 1em 0;
-        color: #333;
-        background-color: #f8f8f8;
-        position: relative;
+    .explorer-content hr {
+      border: none;
+      border-top: 1px solid #808080; /* Gray top */
+      border-bottom: 1px solid #ffffff; /* White bottom */
+      height: 2px;
+      margin: 1em 0;
     }
-    .win98-content blockquote::before {
-        content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADdSURBVDhPY/z//z8DNwMDw8zAALyZgYHh99+/GP7/+wsDw/8DCIAZGBgYGJgY/P79+8/Awfj9+zeQIJAHiNX/P3/+/GFgYADifkBsABIAEgDxCRAfAeJzQNwIxP/Pnz8ZIEA3AHGQDgBCcgApLgfE/0D8H4j/A/EzkOAASOQHxP+hMvz9+xcejIz/Hwz///9/kARjYGADif//////+vXrFxj+/fvHABIMMAARjwCZAAC5sZUY/zM8gQAAAABJRU5ErkJggg=='); /* Info icon */
-        position: absolute;
-        left: 10px;
-        top: 10px;
+    
+    .explorer-content table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1em 0;
     }
-    .win98-content hr {
-        border: none;
-        border-top: 1px solid #808080; /* Gray top */
-        border-bottom: 1px solid #ffffff; /* White bottom */
-        height: 2px;
-        margin: 1em 0;
+    
+    .explorer-content th, .explorer-content td {
+      border: 1px solid #808080;
+      padding: 4px 8px;
     }
+    
+    .explorer-content th {
+      background-color: #d0d0d0;
+      font-weight: bold;
+    }
+    
+    /* Links like Windows 98 */
+    .explorer-content a {
+      color: #0000ff;
+      text-decoration: underline;
+      display: inline-block; /* Allow margin to be applied */
+      margin-bottom: 5px; /* Add space below links */
+    }
+    
+    /* Add specific styling for navigation links at bottom of page */
+    .explorer-content a[href="/"], .explorer-content a:contains("Home"), .explorer-content a:contains("Back") {
+      margin-bottom: 30px; /* Extra margin for navigation links */
+    }
+    
+    .explorer-content a:visited {
+      color: #800080;
+    }
+    
+    .explorer-content a:hover {
+      color: #ff0000;
+    }
+    
     .win98-statusbar {
       background-color: #c0c0c0;
       border-top: 1px solid #808080;
@@ -165,6 +251,35 @@
       flex-grow: 1;
       overflow: hidden;
       white-space: nowrap;
+      text-overflow: ellipsis; /* Add ellipsis for text overflow */
+      max-width: 100%; /* Ensure content stays within container */
+    }
+    /* Windows 98 Button Style */
+    .win98-button {
+      display: inline-block;
+      background-color: #c0c0c0;
+      color: #000;
+      border-top: 1px solid #ffffff;
+      border-left: 1px solid #ffffff;
+      border-right: 1px solid #808080;
+      border-bottom: 1px solid #808080;
+      padding: 3px 8px;
+      margin: 2px;
+      text-decoration: none;
+      font-size: 11px;
+      cursor: pointer;
+      box-shadow: 1px 1px 0 #000000;
+    }
+    .win98-button:hover {
+      background-color: #d0d0d0;
+    }
+    .win98-button:active {
+      background-color: #b0b0b0;
+      border-top: 1px solid #808080;
+      border-left: 1px solid #808080;
+      border-right: 1px solid #ffffff;
+      border-bottom: 1px solid #ffffff;
+      box-shadow: none;
     }
   </style>
 </head>
@@ -175,28 +290,34 @@
         <span class="win98-titlebar-text">My Document</span>
         <div class="win98-controls">
           <button title="Minimize">_</button>
-          <button title="Maximize">&#9633;</button> <!-- Square symbol -->
+          <button title="Maximize">&#9633;</button>
           <button title="Close">X</button>
         </div>
       </div>
-      <div class="win98-content">
-        {{{content}}}
+      
+      <div class="explorer-layout">
+        <div class="explorer-header">
+          <span class="explorer-header-text">My Blog</span>
+        </div>
+        
+        <div class="explorer-body">
+          <div class="explorer-sidebar">
+            <div class="explorer-sidebar-title">Directories</div>
+            <div class="explorer-sidebar-item">pages</div>
+            <div class="explorer-sidebar-item">content</div>
+          </div>
+          
+          <div class="explorer-content">
+            {{{content}}}
+            <div style="height: 50px;"></div>
+          </div>
+        </div>
       </div>
+      
       <div class="win98-statusbar">
-        <div class="win98-statusbar-panel">Ready</div>
-        <div class="win98-statusbar-panel" style="flex-grow: 0;">CAPS</div>
-        <div class="win98-statusbar-panel" style="flex-grow: 0;">NUM</div>
+        <div class="win98-statusbar-panel" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">Ready</div>
       </div>
     </div>
-  </div>
-  <!-- Taskbar simulation -->
-  <div style="position: fixed; bottom: 0; left: 0; width: 100%; height: 28px; background: #c0c0c0; border-top: 2px solid #ffffff; display: flex; align-items: center; z-index: 10;">
-    <button style="background: #c0c0c0; border-top: 1px solid #ffffff; border-left: 1px solid #ffffff; border-right: 1px solid #808080; border-bottom: 1px solid #808080; font-weight: bold; margin: 2px; padding: 2px 5px; display: flex; align-items: center;">
-        <img src="https://e7.pngegg.com/pngimages/124/301/png-clipart-windows-95-windows-98-computer-icons-microsoft-text-rectangle-thumbnail.png" alt="Start" style="height: 16px; margin-right: 4px;">
-    </button>
-    <!-- Add active program buttons here if needed -->
-    <div style="flex-grow: 1;"></div> <!-- Spacer -->
-    <div style="border-top: 1px solid #808080; border-left: 1px solid #808080; border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 2px 5px; margin: 2px; font-size: 11px;">{{formatTime}}</div>
   </div>
 </body>
 </html> 

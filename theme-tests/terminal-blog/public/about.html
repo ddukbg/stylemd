@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - </title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000000;
+      color: #00FF00; /* Green text */
+      font-family: 'VT323', monospace; /* Retro terminal font */
+      font-size: 16px;
+      line-height: 1.2;
+      padding: 15px;
+      margin: 0;
+    }
+    .terminal-output {
+        white-space: pre-wrap; /* Wrap long lines but preserve spaces */
+        word-wrap: break-word; /* Break long words */
+    }
+    .terminal-prompt {
+      color: #00FFFF; /* Cyan prompt */
+    }
+    .terminal-cursor {
+      display: inline-block;
+      background-color: #00FF00; /* Green cursor */
+      width: 9px; /* Cursor width */
+      height: 16px; /* Cursor height */
+      animation: blink 1s step-end infinite;
+      vertical-align: bottom;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    /* Markdown content styling */
+    h1, h2, h3 {
+      color: #FFFF00; /* Yellow headings */
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      font-weight: normal;
+    }
+    h1 { text-transform: uppercase; }
+    ul, ol {
+        padding-left: 0;
+        margin: 0.5em 0;
+        list-style: none;
+    }
+    li::before {
+        content: "* "; /* Use asterisk for list items */
+        color: #FF00FF; /* Magenta */
+    }
+    code {
+      background-color: #222222;
+      color: #FFFFFF; /* White code text */
+      padding: 0.1em 0.3em;
+    }
+    pre {
+      background-color: #111111;
+      border: 1px solid #333333;
+      /* Add inner shadow for depth */
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      margin: 1em 0;
+      overflow-x: auto;
+      counter-reset: line; /* Reset line counter for each pre block */
+      padding-left: 4em; /* Space for line numbers */
+      position: relative;
+    }
+    pre code {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      display: block; /* Ensure code takes full width */
+    }
+    pre code::before {
+      content: counter(line);
+      counter-increment: line;
+      position: absolute;
+      left: 0;
+      width: 3em; /* Width of line number area */
+      padding-right: 1em;
+      margin-left: -4em; /* Position numbers in the padding */
+      text-align: right;
+      color: #888888; /* Dim color for line numbers */
+      /* Optional: prevent selection */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    blockquote {
+      border-left: 3px solid #00FF00;
+      padding-left: 10px;
+      margin-left: 0;
+      font-style: italic;
+      color: #AAAAAA; /* Gray quote text */
+    }
+    a {
+        color: #00FF00; /* Green links like main text */
+        text-decoration: none; /* No underline */
+    }
+    a:hover {
+        background-color: #00FF00;
+        color: #000000;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 1em 0;
+      width: 100%;
+      border: 1px solid #333333;
+    }
+    th, td {
+      border: 1px solid #333333;
+      padding: 0.3em 0.5em;
+      text-align: left;
+    }
+    th {
+      background-color: #222222;
+      color: #FFFF00; /* Yellow header text */
+      font-weight: normal;
+    }
+  
+    /* StyleMD watermark */
+    .stylemd-watermark {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 10px;
+      opacity: 0.5;
+      color: #777;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .stylemd-watermark a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body>
+  <div class="terminal-output">
+    <span class="terminal-prompt">user@stylemd:~$</span> cat document.md
+    <header>
+  <h1>About</h1>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Projects.html">Projects</a>
+  </nav>
+  </header>
+    <h1 id="about-me"><a href="#about-me" class="header-anchor"></a>About Me</h1><h2 id="who-am-i-"><a href="#who-am-i-" class="header-anchor"></a>Who Am I?</h2><p>I&#39;m a passionate web developer and designer who enjoys creating digital experiences that are both functional and aesthetically pleasing. With a background in computer science and a love for creativity, I bridge the gap between technical and visual aspects of web development.</p>
+<p><img src="https://i.pravatar.cc/300" alt="Profile Photo"></p>
+<h2 id="my-skills"><a href="#my-skills" class="header-anchor"></a>My Skills</h2><div class="mermaid">pie title Skills Distribution
+    "Frontend" : 40
+    "Backend" : 30
+    "Design" : 20
+    "DevOps" : 10</div><h2 id="experience"><a href="#experience" class="header-anchor"></a>Experience</h2><p>I&#39;ve worked with a variety of technologies and frameworks, focusing primarily on:</p>
+<ul>
+<li>React and Vue.js for frontend development</li>
+<li>Node.js and Python for backend services</li>
+<li>UI/UX design principles</li>
+<li>Technical writing and documentation</li>
+</ul>
+<h2 id="get-in-touch"><a href="#get-in-touch" class="header-anchor"></a>Get In Touch</h2><p>Feel free to reach out to me through any of the social media links in the footer. I&#39;m always open to interesting projects and collaborations!</p>
+
+    <span class="terminal-prompt">user@stylemd:~$</span> <span class="terminal-cursor"></span>
+  </div>
+  <div class="stylemd-watermark">Made with <a href="https://github.com/ddukbg/stylemd">StyleMD</a></div>
+</body>
+</html> 

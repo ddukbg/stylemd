@@ -1,0 +1,52 @@
+{
+  "siteTitle": "Test Blog",
+  "siteDescription": "A test blog for StyleMD themes",
+  "theme": "retro-console",
+  "postsDir": "content",
+  "pagesDir": "pages",
+  "outputDir": "public",
+  "dateFormat": "YYYY-MM-DD",
+  "timeFormat": "HH:mm",
+  "pagination": {
+    "enabled": true,
+    "perPage": 5
+  },
+  "sortOrder": "newest-first",
+  "showDrafts": false,
+  "flatPosts": true,
+  "flatPages": true,
+  "author": {
+    "name": "StyleMD User",
+    "email": "example@example.com",
+    "avatar": "https://i.pravatar.cc/150"
+  },
+  "navigationLinks": [
+    {
+      "title": "About",
+      "url": "about.html"
+    },
+    {
+      "title": "Projects",
+      "url": "projects.html"
+    }
+  ],
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/ddukbg/stylemd"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/example"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/example"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/example"
+    }
+  ],
+  "footerText": "© 2025 StyleMD Blog. All rights reserved."
+}
