@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2026-02-01
+
+### Fixed
+- Fixed mobile layout issues in `windows98` theme:
+  - Added `overflow-x: hidden` and `overflow-y: auto` to prevent full-page scroll locking on mobile.
+  - Constrained window width (`max-width: 800px`, `width: calc(100vw - 30px)`) for better responsiveness.
+  - Added media queries for small screens (<640px) to adjust padding, borders, and flex direction.
+- Fixed navigation link generation in `stylemd blog init` templates:
+  - Updated templates to use `{{url}}` instead of `{{title}}.html` for correct linking in navigation menus.
+
+### Maintenance
+- Added `node --test` script to `package.json` for running tests.
+
 ## [2.0.0] - 2025-05-02
 
 ### Added

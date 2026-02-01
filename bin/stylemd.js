@@ -281,7 +281,7 @@ Examples:
     <nav class="nav-links">
       <a href="index.html"${name === 'windows98' ? ' class="win98-button"' : ''}>Home</a>
       {{#each navigationLinks}}
-        <a href="{{title}}.html"${name === 'windows98' ? ' class="win98-button"' : ''}>{{title}}</a>
+        <a href="{{url}}"${name === 'windows98' ? ' class="win98-button"' : ''}>{{title}}</a>
       {{/each}}
     </nav>
   </header>`;
@@ -297,7 +297,7 @@ Examples:
   <nav class="nav-links">
     <a href="index.html"${name === 'windows98' ? ' class="win98-button"' : ''}>Home</a>
     {{#each navigationLinks}}
-      <a href="{{title}}.html"${name === 'windows98' ? ' class="win98-button"' : ''}>{{title}}</a>
+      <a href="{{url}}"${name === 'windows98' ? ' class="win98-button"' : ''}>{{title}}</a>
     {{/each}}
   </nav>
 </header>
@@ -335,7 +335,7 @@ Examples:
   <nav class="nav-links">
     <a href="index.html"${name === 'windows98' ? ' class="win98-button"' : ''}>Home</a>
     {{#each navigationLinks}}
-      <a href="{{title}}.html"${name === 'windows98' ? ' class="win98-button"' : ''}>{{title}}</a>
+      <a href="{{url}}"${name === 'windows98' ? ' class="win98-button"' : ''}>{{title}}</a>
     {{/each}}
   </nav>
   </header>`;
@@ -344,7 +344,7 @@ Examples:
   <nav class="nav-links">
     <a href="index.html"${name === 'windows98' ? ' class="win98-button"' : ''}>Home</a>
     {{#each navigationLinks}}
-      <a href="{{title}}.html"${name === 'windows98' ? ' class="win98-button"' : ''}>{{title}}</a>
+      <a href="{{url}}"${name === 'windows98' ? ' class="win98-button"' : ''}>{{title}}</a>
     {{/each}}
   </nav>
   </header>
