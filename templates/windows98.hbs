@@ -12,7 +12,10 @@
       font-size: 11px;
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Prevent scrollbars on body */
+      /* NOTE: On mobile, 'overflow:hidden' prevents scrolling and breaks layout.
+         We keep normal scrolling by default and constrain scroll areas inside the window. */
+      overflow-x: hidden;
+      overflow-y: auto;
     }
     .win98-container {
       padding: 15px;
@@ -27,8 +30,9 @@
       display: flex;
       flex-direction: column;
       min-width: 300px;
-      max-width: 800px; /* Limit window width */
-      margin: 0 auto; /* Center the window */
+      max-width: 800px; /* Desktop-friendly limit */
+      width: calc(100vw - 30px);
+      margin: 0 auto; /* Center */
     }
     .win98-titlebar {
       background: linear-gradient(to right, #000080, #1084d0); /* Navy to Blue gradient */
@@ -280,6 +284,32 @@
       border-right: 1px solid #ffffff;
       border-bottom: 1px solid #ffffff;
       box-shadow: none;
+    }
+
+    /* Mobile / small screens */
+    @media (max-width: 640px) {
+      body {
+        font-size: 12px;
+      }
+      .win98-container {
+        padding: 10px;
+      }
+      .win98-window {
+        width: calc(100vw - 20px);
+        max-width: none;
+        min-width: 0;
+      }
+      .explorer-layout {
+        max-height: none;
+      }
+      .explorer-body {
+        flex-direction: column;
+      }
+      .explorer-sidebar {
+        width: auto;
+        border-right: none;
+        border-bottom: 2px solid #808080;
+      }
     }
   </style>
 </head>
