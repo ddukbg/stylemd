@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Document</title>
+  <style>
+    :root {
+      --bg1: #0b1220;
+      --bg2: #101a33;
+      --card: rgba(255,255,255,0.08);
+      --card2: rgba(255,255,255,0.12);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --accent: #74c0ff;
+      --border: rgba(255,255,255,0.18);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(116,192,255,0.35), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(255,122,223,0.22), transparent 55%),
+        radial-gradient(1000px 700px at 50% 90%, rgba(105,255,196,0.18), transparent 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 980px;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong { font-size: 14px; letter-spacing: 0.4px; }
+    .brand span { font-size: 12px; color: var(--muted); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .pill:hover { transform: translateY(-1px); background: rgba(255,255,255,0.10); }
+
+    .card {
+      margin-top: 16px;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    h1, h2, h3 { margin: 0.2em 0 0.6em; }
+    p, li { color: var(--text); }
+
+    pre {
+      overflow: auto;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(0,0,0,0.35);
+    }
+
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    @media (max-width: 640px) {
+      .wrap { margin: 16px auto; }
+      .topbar { top: 0; border-radius: 0; }
+      .card { padding: 16px; border-radius: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <strong>Glass Bento</strong>
+        <span>Clean, glossy, mobile-first</span>
+      </div>
+      <nav class="nav-links">
+        <a class="pill" href="index.html">Home</a>
+      </nav>
+    </div>
+
+    <main class="card">
+      {{{content}}}
+    </main>
+  </div>
+</body>
+</html>

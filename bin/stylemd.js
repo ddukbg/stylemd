@@ -453,11 +453,22 @@ Examples:
         // Process markdown content
         const html = marked.parse(content);
         
+        // Simple date formatter using config
+        const formatDate = (d, fmt) => {
+          if (!d || isNaN(d.getTime())) return d;
+          const y = d.getFullYear();
+          const m = String(d.getMonth() + 1).padStart(2, '0');
+          const day = String(d.getDate()).padStart(2, '0');
+          return (fmt || 'YYYY-MM-DD').replace('YYYY', y).replace('MM', m).replace('DD', day);
+        };
+
+        const postDate = data.date ? new Date(data.date) : new Date();
+
         // Create post object
         const post = {
           title: data.title || path.basename(file, '.md'),
-          date: data.date ? new Date(data.date).toLocaleDateString(config.locale || 'en-US') : new Date().toLocaleDateString(config.locale || 'en-US'),
-          time: data.date ? new Date(data.date).toLocaleTimeString(config.locale || 'en-US', { hour: 'numeric', minute: '2-digit', hour12: true }) : new Date().toLocaleTimeString(config.locale || 'en-US', { hour: 'numeric', minute: '2-digit', hour12: true }),
+          date: formatDate(postDate, config.dateFormat),
+          time: postDate.toLocaleTimeString(config.locale || 'en-US', { hour: 'numeric', minute: '2-digit', hour12: true }),
           content: html,
           homeUrl: config.flatPosts ? 'index.html' : '/',
           ...data

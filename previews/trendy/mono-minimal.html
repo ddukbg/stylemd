@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --fg:#e9e9ea;
+      --muted:#b4b4b8;
+      --line: rgba(255,255,255,.10);
+      --card: rgba(255,255,255,.03);
+      --max: 820px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height: 1.75;
+    }
+    .wrap{max-width: var(--max); margin: 0 auto; padding: 36px 18px 60px;}
+    header{
+      padding: 16px 16px 14px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 14px;
+    }
+    h1{margin:0; font-size: clamp(26px, 3.6vw, 40px); letter-spacing: -0.02em;}
+    .sub{margin:8px 0 0; color: var(--muted)}
+    article{
+      margin-top: 14px;
+      padding: 18px 16px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 14px;
+    }
+    a{color: var(--fg); text-decoration: none; border-bottom: 1px solid rgba(233,233,234,.35)}
+    a:hover{border-bottom-color: rgba(233,233,234,.75)}
+    hr{border:none; border-top: 1px solid var(--line); margin: 18px 0}
+    pre{
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      overflow:auto;
+    }
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    blockquote{
+      margin: 0;
+      padding: 10px 12px;
+      border-left: 3px solid rgba(233,233,234,.35);
+      background: rgba(255,255,255,.04);
+      border-radius: 10px;
+      color: var(--muted);
+    }
+  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/default.min.css"><script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script><script>mermaid.initialize({ startOnLoad: true, securityLevel: "loose" });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>MathJax = { tex: { inlineMath: [["$", "$"]], displayMath: [["$", "$"]] } };</script></head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1></h1>
+      <p class="sub">Monochrome minimal theme (dark, editorial).</p>
+    </header>
+
+    <article>
+      <h1 id="stylemd"><a href="#stylemd" class="header-anchor"></a>stylemd</h1><!-- Logo Placeholder -->
+<p align="center">
+  <img src="docs/images/stylemd.png" alt="stylemd Logo" width="200"/>
+</p>
+
+<p>A command-line tool to generate static HTML pages from Markdown files, applying various style themes.</p>
+<!-- Core Functionality Showcase -->
+<div align="center">
+  <div style="margin-bottom: 20px;">
+    <h3>Single File Mode: Transform any Markdown into styled HTML</h3>
+    <p><code>Markdown</code> ➡️ <code>stylemd</code> ➡️ <code>Retro-Styled HTML</code></p>
+    <img src="docs/images/example-windows98.gif" alt="stylemd Demo - Single File Mode" width="700"/>
+  </div>
+  
+  <div style="margin-top: 30px;">
+    <h3>Blog Mode: Create complete themed static blogs</h3>
+    <p><code>Markdown Files</code> ➡️ <code>stylemd blog build</code> ➡️ <code>Complete Themed Blog</code></p>
+    <img src="docs/images/example-blog-mode.gif" alt="stylemd Demo - Blog Mode" width="700"/>
+  </div>
+</div>
+
+<p><a href="https://www.npmjs.com/package/@ddukbg/stylemd"><img src="https://img.shields.io/npm/v/stylemd.svg" alt="NPM Version"></a> <!-- Placeholder: Replace with actual badge if published -->
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a> <!-- Assuming MIT License --></p>
+<h2 id="features"><a href="#features" class="header-anchor"></a>Features</h2><ul>
+<li>Convert Markdown files to HTML with stylish themes</li>
+<li>Create complete static blog sites with all themes</li>
+<li>Simple command-line interface for both single files and blogs</li>
+<li>Multiple pre-built retro and modern themes</li>
+<li>Configurable blog settings with front-matter support</li>
+<li>Automatic index and navigation generation for blogs</li>
+<li>Custom CSS and locale settings</li>
+<li>LaTeX math equation support (inline and display formats)</li>
+</ul>
+<h2 id="installation"><a href="#installation" class="header-anchor"></a>Installation</h2><p>There are two ways to install <code>stylemd</code>:</p>
+<h3 id="1-global-installation-recommended-for-general-use-"><a href="#1-global-installation-recommended-for-general-use-" class="header-anchor"></a>1. Global Installation (Recommended for general use)</h3><p>If you want to use <code>stylemd</code> as a command-line tool anywhere on your system, install it globally via npm:</p>
+<pre><code class="hljs bash">npm install -g @ddukbg/stylemd</code></pre><p>Make sure you have Node.js and npm installed.</p>
+<h3 id="2-local-development-setup"><a href="#2-local-development-setup" class="header-anchor"></a>2. Local Development Setup</h3><p>If you want to contribute to the project or modify the code:</p>
+<ol>
+<li><strong>Clone the repository:</strong><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/ddukbg/stylemd.git <span class="hljs-comment"># Replace with your actual repo URL if different</span>
+<span class="hljs-built_in">cd</span> stylemd</code></pre></li>
+<li><strong>Install dependencies:</strong><pre><code class="hljs bash">npm install</code></pre></li>
+<li><strong>Link the package:</strong> This allows you to run the <code>stylemd</code> command locally using the cloned code.<pre><code class="hljs bash">npm <span class="hljs-built_in">link</span></code></pre>Now you can run <code>stylemd</code> from any directory, and it will use the code in your cloned <code>stylemd</code> folder.</li>
+</ol>
+<h2 id="usage"><a href="#usage" class="header-anchor"></a>Usage</h2><p>StyleMD supports two main modes: single file conversion and blog mode.</p>
+<h3 id="single-file-mode"><a href="#single-file-mode" class="header-anchor"></a>Single File Mode</h3><p>Convert a single Markdown file to a styled HTML page:</p>
+<pre><code class="hljs bash">stylemd &lt;markdownFile&gt; [options]</code></pre><p><strong>Arguments:</strong></p>
+<ul>
+<li><code>&lt;markdownFile&gt;</code>: Path to the input Markdown file (e.g., <code>notes.md</code>, <code>examples/input/example-default.md</code>).</li>
+</ul>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-t, --template &lt;name&gt;</code>: Template name to use (default: <code>default</code>). See available themes above.</li>
+<li><code>-o, --output &lt;file&gt;</code>: Output HTML file path (default: <code>index.html</code>).</li>
+<li><code>-h, --help</code>: Display help for command.</li>
+<li><code>-V, --version</code>: Output the version number.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<pre><code class="hljs bash"><span class="hljs-comment"># Use the &#x27;windows98&#x27; theme for &#x27;mydoc.md&#x27; and output to &#x27;mypage.html&#x27;</span>
+stylemd mydoc.md -t windows98 -o mypage.html
+
+<span class="hljs-comment"># Use the &#x27;terminal&#x27; theme for an example file, output to the root</span>
+stylemd examples/input/example-terminal.md --template terminal --output example-output-terminal.html
+
+<span class="hljs-comment"># Use the default theme and output to &#x27;index.html&#x27;</span>
+stylemd README.md</code></pre><h3 id="blog-mode"><a href="#blog-mode" class="header-anchor"></a>Blog Mode</h3><p>Create and build a complete static blog site using any theme:</p>
+<h4 id="1-initialize-a-new-blog"><a href="#1-initialize-a-new-blog" class="header-anchor"></a>1. Initialize a new blog</h4><pre><code class="hljs bash">stylemd blog init &lt;siteDir&gt; [-T &lt;template&gt;]</code></pre><p>This creates a directory structure with everything needed for your blog:</p>
+<pre><code class="hljs plaintext">&lt;siteDir&gt;/
+├── content/           # Your blog posts as Markdown files
+├── pages/             # Static pages (about, contact, etc.)
+├── public/            # Output directory (generated HTML)
+├── templates/         # Theme templates
+│   └── &lt;theme&gt;/       # Selected theme (e.g., windows98)
+│       ├── post.hbs   # Post template (from original theme)
+│       ├── page.hbs   # Page template (from original theme)
+│       └── index.hbs  # Blog index template (includes post list)
+└── stylemd.config.json  # Blog configuration</code></pre><p>Example:</p>
+<pre><code class="hljs bash">stylemd blog init my-retro-blog -T windows98</code></pre><h4 id="2-add-content"><a href="#2-add-content" class="header-anchor"></a>2. Add content</h4><p>Create Markdown files in the appropriate directories:</p>
+<ul>
+<li><strong>Blog posts</strong>: Add <code>.md</code> files to the <code>content/</code> directory</li>
+<li><strong>Static pages</strong>: Add <code>.md</code> files to the <code>pages/</code> directory</li>
+</ul>
+<p>Each file can include front-matter at the top:</p>
+<pre><code class="hljs markdown">---
+title: My First Blog Post
+date: 2025-05-01
+slug: first-post
+<span class="hljs-section">draft: false
+---</span>
+
+<span class="hljs-section"># This is my first post</span>
+
+Content goes here...</code></pre><h4 id="3-configure-your-blog"><a href="#3-configure-your-blog" class="header-anchor"></a>3. Configure your blog</h4><p>Edit <code>stylemd.config.json</code> to customize your blog settings:</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;siteTitle&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;My Retro Blog&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;siteDescription&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;A blog about retro computing&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;theme&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;windows98&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;postsDir&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;content&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;pagesDir&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;pages&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;outputDir&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;public&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;dateFormat&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;YYYY-MM-DD&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;timeFormat&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;HH:mm&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;locale&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;en-US&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;pagination&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;enabled&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;perPage&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">5</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;sortOrder&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;newest-first&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;showDrafts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;flatPosts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;flatPages&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;author&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Your Name&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;email&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;your.email@example.com&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;avatar&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://example.com/avatar.jpg&quot;</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;navigationLinks&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span> <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;About&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;about.html&quot;</span> <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span> <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Projects&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;projects.html&quot;</span> <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;socialLinks&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">{</span> <span class="hljs-attr">&quot;platform&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;GitHub&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://github.com/yourusername&quot;</span> <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-punctuation">{</span> <span class="hljs-attr">&quot;platform&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Twitter&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://twitter.com/yourusername&quot;</span> <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;footerText&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;© 2025 My Retro Blog&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;customCSS&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;.my-custom-class { color: red; }&quot;</span>
+<span class="hljs-punctuation">}</span></code></pre><p>Key configuration options include theme selection, URL structure (flat or nested), pagination, author information, and custom CSS.</p>
+<h4 id="4-build-your-blog"><a href="#4-build-your-blog" class="header-anchor"></a>4. Build your blog</h4><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> &lt;siteDir&gt;
+stylemd blog build</code></pre><p>This generates your complete site in the <code>public/</code> directory, ready for deployment.</p>
+<p>You can also specify a custom output directory:</p>
+<pre><code class="hljs bash">stylemd blog build --output dist</code></pre><h4 id="5-deploy-your-blog"><a href="#5-deploy-your-blog" class="header-anchor"></a>5. Deploy your blog</h4><p>After building your blog, you can deploy it to any static hosting service:</p>
+<pre><code class="hljs bash"><span class="hljs-comment"># Example: Deploy to GitHub Pages</span>
+<span class="hljs-built_in">cp</span> -r public/* docs/
+git add docs
+git commit -m <span class="hljs-string">&quot;Update blog&quot;</span>
+git push
+
+<span class="hljs-comment"># Example: Deploy to Netlify</span>
+<span class="hljs-comment"># Just connect your GitHub repo to Netlify and set the publish directory to &#x27;public&#x27;</span></code></pre><h2 id="available-themes"><a href="#available-themes" class="header-anchor"></a>Available Themes</h2><p>Here are the currently included themes (each with single page and blog mode support):</p>
+<ol>
+<li><strong><code>default</code></strong>: Clean, modern baseline style suitable for general documents. <a href="https://stylemd.pages.dev/example-output-default.html">Page Preview</a> | <a href="https://stylemd.pages.dev/default-blog/public/">Blog Preview</a></li>
+<li><strong><code>windows98</code></strong>: Mimics the classic Windows 98 UI elements. <a href="https://stylemd.pages.dev/example-output-windows98.html">Page Preview</a> | <a href="https://stylemd.pages.dev/windows98-blog/public/">Blog Preview</a></li>
+<li><strong><code>terminal</code></strong>: Simulates an old-school terminal output with prompt and cursor. <a href="https://stylemd.pages.dev/example-output-terminal.html">Page Preview</a> | <a href="https://stylemd.pages.dev/terminal-blog/public/">Blog Preview</a></li>
+<li><strong><code>geocities</code></strong>: A nostalgic, chaotic, and fun GeoCities-inspired theme. <a href="https://stylemd.pages.dev/example-output-geocities.html">Page Preview</a> | <a href="https://stylemd.pages.dev/geocities-blog/public/">Blog Preview</a></li>
+<li><strong><code>blueprint</code></strong>: Technical blueprint style with grid background and annotations. <a href="https://stylemd.pages.dev/example-output-blueprint.html">Page Preview</a> | <a href="https://stylemd.pages.dev/blueprint-blog/public/">Blog Preview</a></li>
+<li><strong><code>macos-classic</code></strong>: Inspired by the look and feel of macOS Classic (System 7/8/9). <a href="https://stylemd.pages.dev/example-output-macos-classic.html">Page Preview</a> | <a href="https://stylemd.pages.dev/macos-classic-blog/public/">Blog Preview</a></li>
+<li><strong><code>amiga-workbench</code></strong>: Emulates the Amiga Workbench 1.x interface. <a href="https://stylemd.pages.dev/example-output-amiga-workbench.html">Page Preview</a> | <a href="https://stylemd.pages.dev/amiga-workbench-blog/public/">Blog Preview</a></li>
+<li><strong><code>msdos</code></strong>: Text-mode interface resembling MS-DOS prompt and <code>edit.com</code>. <a href="https://stylemd.pages.dev/example-output-msdos.html">Page Preview</a> | <a href="https://stylemd.pages.dev/msdos-blog/public/">Blog Preview</a></li>
+<li><strong><code>c64</code></strong>: Commodore 64 BASIC screen style with pixel font. <a href="https://stylemd.pages.dev/example-output-c64.html">Page Preview</a> | <a href="https://stylemd.pages.dev/c64-blog/public/">Blog Preview</a></li>
+<li><strong><code>vim</code></strong>: Minimalist theme inspired by the Vim editor (Solarized Dark). <a href="https://stylemd.pages.dev/example-output-vim.html">Page Preview</a> | <a href="https://stylemd.pages.dev/vim-blog/public/">Blog Preview</a></li>
+<li><strong><code>retro-console</code></strong>: Monochrome retro game console/HUD interface (like Fallout&#39;s Pip-Boy). <a href="https://stylemd.pages.dev/example-output-retro-console.html">Page Preview</a> | <a href="https://stylemd.pages.dev/retro-console-blog/public/">Blog Preview</a></li>
+<li><strong><code>pixel-art</code></strong>: Retro RPG style with pixel font and UI window elements. <a href="https://stylemd.pages.dev/example-output-pixel-art.html">Page Preview</a> | <a href="https://stylemd.pages.dev/pixel-art-blog/public/">Blog Preview</a></li>
+<li><strong><code>y2k</code></strong>: Early 2000s web design aesthetic with Aqua elements. <a href="https://stylemd.pages.dev/example-output-y2k.html">Page Preview</a> | <a href="https://stylemd.pages.dev/y2k-blog/public/">Blog Preview</a></li>
+<li><strong><code>frutiger-aero</code></strong>: Mid-2000s style with glossy, glassy, and nature-inspired elements. <a href="https://stylemd.pages.dev/example-output-frutiger-aero.html">Page Preview</a> | <a href="https://stylemd.pages.dev/frutiger-aero-blog/public/">Blog Preview</a></li>
+<li><strong><code>area51</code></strong>: Dark, retro sci-fi/hacker theme with neon green text. <a href="https://stylemd.pages.dev/example-output-area51.html">Page Preview</a> | <a href="https://stylemd.pages.dev/area51-blog/public/">Blog Preview</a></li>
+<li><strong><code>heartland</code></strong>: Warm, cozy theme inspired by 90s personal/hobby sites. <a href="https://stylemd.pages.dev/example-output-heartland.html">Page Preview</a> | <a href="https://stylemd.pages.dev/heartland-blog/public/">Blog Preview</a></li>
+<li><strong><code>hollywood</code></strong>: Flashy 90s entertainment/fan site theme with gold and purple. <a href="https://stylemd.pages.dev/example-output-hollywood.html">Page Preview</a> | <a href="https://stylemd.pages.dev/hollywood-blog/public/">Blog Preview</a></li>
+<li><strong><code>atlantis</code></strong>: Mystical, dark fantasy theme inspired by sunken cities. <a href="https://stylemd.pages.dev/example-output-atlantis.html">Page Preview</a> | <a href="https://stylemd.pages.dev/atlantis-blog/public/">Blog Preview</a></li>
+</ol>
+<p><em>(All themes work for both single page conversions and full blog sites.)</em></p>
+<h2 id="project-structure"><a href="#project-structure" class="header-anchor"></a>Project Structure</h2><pre><code class="hljs plaintext">stylemd/
+├── bin/                 # CLI script
+├── templates/           # Theme templates (.hbs)
+├── examples/
+│   ├── input/           # Example Markdown files
+│   └── output/          # Example generated HTML (Git ignored)
+├── node_modules/        # Dependencies (Git ignored)
+├── .gitignore           # Files/folders ignored by Git
+├── package.json
+├── package-lock.json
+└── README.md</code></pre><h2 id="custom-templates"><a href="#custom-templates" class="header-anchor"></a>Custom Templates</h2><p>Currently, <code>stylemd</code> only loads templates from its internal <code>/templates</code> directory. Using templates from custom external directories is <strong>not yet supported</strong>.</p>
+<h2 id="contributing"><a href="#contributing" class="header-anchor"></a>Contributing</h2><p>Contributions are welcome! If you&#39;d like to add new themes, improve existing ones, fix bugs, or add features (like custom template directory support), please follow these steps:</p>
+<ol>
+<li><strong>Fork</strong> the repository.</li>
+<li>Create a new <strong>branch</strong> for your feature or fix (<code>git checkout -b feature/my-new-theme</code>).</li>
+<li>Make your changes. Ensure new themes are added as <code>.hbs</code> files in the <code>templates</code> directory and consider adding a corresponding example <code>.md</code> file in <code>examples/input</code>.</li>
+<li>Test your changes locally.</li>
+<li>Commit your changes (<code>git commit -am &#39;Add some feature&#39;</code>).</li>
+<li>Push to the branch (<code>git push origin feature/my-new-theme</code>).</li>
+<li>Create a new <strong>Pull Request</strong>.</li>
+</ol>
+<h2 id="future-plans-roadmap-"><a href="#future-plans-roadmap-" class="header-anchor"></a>Future Plans (Roadmap)</h2><p>Here are some features planned for future releases:</p>
+<ul>
+<li><strong>Custom Template Directory:</strong> Support for loading themes from a user-specified directory (<code>--template-dir</code> option). This will allow users to easily create and use their own themes without modifying the core package.</li>
+<li><strong>Watch Mode:</strong> A <code>--watch</code> flag to automatically re-generate the HTML file when the source Markdown file is modified, providing a live preview experience during editing.</li>
+<li><strong>Directory Conversion:</strong> Ability to process an entire directory of Markdown files at once, converting each <code>.md</code> file into a corresponding HTML file, potentially mirroring the input directory structure.</li>
+</ul>
+<p>Contributions towards these features are welcome!</p>
+<h2 id="license"><a href="#license" class="header-anchor"></a>License</h2><p>This project is licensed under the <strong>MIT License</strong>. See the <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2 id="additional-features"><a href="#additional-features" class="header-anchor"></a>Additional Features</h2><h3 id="latex-math-equations"><a href="#latex-math-equations" class="header-anchor"></a>LaTeX Math Equations</h3><p>StyleMD supports rendering LaTeX math equations using MathJax:</p>
+<p><strong>Inline equations</strong> can be written with single dollar signs: <code>$E = mc^2$</code> renders as $E = mc^2$</p>
+<p><strong>Display equations</strong> can be written with double dollar signs:</p>
+<pre><code class="hljs plaintext">$$ \frac{d}{dx}(x^n) = nx^{n-1} $$</code></pre><p>Renders as:
+$$ \frac{d}{dx}(x^n) = nx^{n-1} $$</p>
+<p>You can use all standard LaTeX math syntax in both single file mode and blog mode. </p>
+
+    </article>
+  </div>
+</body>
+</html>

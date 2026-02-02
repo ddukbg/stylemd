@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Document</title>
+  <style>
+    :root {
+      --bg: #fff6e5;
+      --ink: #111111;
+      --accent: #ff2e63;
+      --accent2: #08d9d6;
+      --border: #111111;
+      --shadow: 6px 6px 0 var(--border);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(700px 500px at 20% 20%, rgba(255,46,99,0.18), transparent 60%),
+                  radial-gradient(700px 500px at 80% 30%, rgba(8,217,214,0.18), transparent 60%),
+                  var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Arial;
+      line-height: 1.55;
+    }
+    a { color: var(--ink); text-decoration: none; border-bottom: 3px solid var(--accent); }
+    a:hover { border-bottom-color: var(--accent2); }
+
+    .wrap {
+      max-width: 980px;
+      margin: 26px auto;
+      padding: 0 16px 80px;
+    }
+
+    .bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border: 3px solid var(--border);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border: 3px solid var(--border);
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+    }
+
+    .nav a {
+      display: inline-block;
+      padding: 8px 10px;
+      border: 3px solid var(--border);
+      background: #fff;
+      box-shadow: 4px 4px 0 var(--border);
+      margin-left: 6px;
+    }
+
+    .panel {
+      margin-top: 16px;
+      padding: 18px 18px;
+      border: 3px solid var(--border);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    pre {
+      overflow: auto;
+      padding: 12px;
+      border: 3px solid var(--border);
+      background: #f3f3f3;
+    }
+
+    h1 { margin-top: 0.2em; }
+
+    @media (max-width: 640px) {
+      .wrap { margin: 12px auto; }
+      .nav a { margin-left: 0; margin-right: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bar">
+      <div>
+        <span class="badge">NEO BRUTALISM</span>
+      </div>
+      <div class="nav">
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      {{{content}}}
+    </div>
+  </div>
+</body>
+</html>
