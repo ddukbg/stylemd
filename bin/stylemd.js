@@ -466,12 +466,12 @@ Examples:
 
         // Create post object
         const post = {
+          ...data,
           title: data.title || path.basename(file, '.md'),
           date: formatDate(postDate, config.dateFormat),
           time: postDate.toLocaleTimeString(config.locale || 'en-US', { hour: 'numeric', minute: '2-digit', hour12: true }),
           content: html,
-          homeUrl: config.flatPosts ? 'index.html' : '/',
-          ...data
+          homeUrl: config.flatPosts ? 'index.html' : '/'
         };
         
         // Determine output path
